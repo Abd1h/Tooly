@@ -42,7 +42,7 @@ Paragraph default: 1.6
 0 2.4rem 4.8rem rgba(0, 0, 0, 0.075);
 
 --- 06 BORDER-RADIUS
-Default: 9px
+Default: 4px
 Medium: 11px
 
 --- 07 WHITESPACE
@@ -65,7 +65,7 @@ html {
 }
 :root {
   /* base colors */
-  --clr-base: #333333;
+  --clr-base: rgb(38, 38, 38);
   --clr-base-lt: #999;
   --clr-base-dk: #333;
 
@@ -79,7 +79,7 @@ html {
   --clr-secondary-2: #018f8f;
 
   /* base font size */
-  $fs-base: 1.6rem;
+  --fs-base: 1.6rem;
 
   /* larger  heading font sizes */
   --fs-mega: 7rem;
@@ -92,18 +92,98 @@ html {
   --fs-h4: 2.4rem;
 
   /* smaller than heading font sizes */
-  --fs-milli: 1.4rem;
+  --fs-milli: 1.8rem;
   --fs-micro: 1rem;
   --fs-nano: 0.8rem;
 
   /* 2 font family */
-  --ff-base: "Inter", sans-serif;
+  --ff-base: "Rubik", sans-serif;
   --ff-bold: "Montserrat", sans-serif;
+
+  /* border raduse */
+  --border-r: 0.2rem;
+  /* --shadow */
+  --shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
+    rgba(0, 0, 0, 0.3) 0px 30px 60px -30px,
+    rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
 }
 body {
   font-family: var(--ff-base);
-  font-size: 1.6rem;
+  font-size: var(--ff-base);
   color: var(--clr-base);
+  line-height: 1;
+}
+.mother-container {
+  width: min(90%, 70.5rem);
+  margin: 1rem auto;
+}
+li {
+  list-style: none;
+}
+/* ====================== 
+   nav
+====================== */
+.nav--bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 6vh;
+
+  margin-bottom: 3.6rem;
+}
+.nav--bar .logo {
+  color: var(--clr-primary);
+  font-size: var(--fs-h3);
+}
+.nav--bar svg {
+  height: 3.6rem;
+  width: 3.6rem;
+  stroke: var(--clr-primary);
+}
+/* burger menu ----------------- */
+.nav--links {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  display: none;
+}
+
+/* ====================== 
+   Hero section
+====================== */
+.hero-section {
+  display: flex;
+  flex-direction: column;
+  gap: 3.8rem;
+  margin-bottom: 12rem;
+}
+.hero--head-title {
+  font-size: var(--fs-h1);
+  line-height: 1.05;
+  font-family: var(--ff-bold);
+  letter-spacing: 0.1px;
+  font-weight: 800;
+  max-width: 90%;
+  margin-bottom: 2.4rem;
+}
+.hero-sub-text {
+  font-size: var(--fs-base);
+  font-weight: 400;
+  line-height: 1.2;
+  margin-bottom: 2.6rem;
+}
+/* deleting some text
+.hero-sub-text span {
+  color: var(--clr-primary);
+  font-size: var(--fs-milli);
+  font-weight: 500;
+} */
+.map-container {
+  background-color: var(--clr-secondary-2);
+  width: 100%;
+  height: 20rem;
+
+  box-shadow: var(--shadow);
 }
 
 .featured-in {
@@ -115,4 +195,41 @@ body {
 .featured-in img {
   height: 5rem;
   /* filter: brightness(0); */
+}
+
+/* hero title drill images */
+.drill-relative {
+  position: relative;
+}
+.drill-1 {
+  width: 16rem;
+  position: absolute;
+  top: -3.8rem;
+  left: 3rem;
+
+  transform: rotate(-225deg);
+}
+.drill-2 {
+  width: 16rem;
+  position: absolute;
+  top: -4rem;
+  left: -8.8rem;
+
+  transform: rotate(-45deg);
+}
+/* ====================== 
+   buttons 
+====================== */
+.hero-btn {
+  color: white;
+  display: inline-block;
+  font-family: var(--ff-bold);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  text-decoration: none;
+  background-color: var(--clr-primary);
+  font-size: var(--fs-milli);
+  font-weight: 600;
+  padding: 0.5em 1.2em;
+  border-radius: var(--border-r);
 }
