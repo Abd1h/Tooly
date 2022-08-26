@@ -62,10 +62,11 @@ html {
   /* convert to 10px for using rem*/
   /* 10px / 16px = 0.625 = 62.5% */
   font-size: 62.5%;
+  /* overflow: hidden; */
 }
 :root {
   /* base colors */
-  --clr-base: rgb(38, 38, 38);
+  --clr-base: #333;
   --clr-base-lt: #999;
   --clr-base-dk: #333;
 
@@ -82,8 +83,8 @@ html {
   --fs-base: 1.6rem;
 
   /* larger  heading font sizes */
-  --fs-mega: 7rem;
-  --fs-kilo: 6rem;
+  --fs-mega: 6rem;
+  --fs-kilo: 4rem;
 
   /* heading font sizes */
   --fs-h1: 3.6rem;
@@ -114,7 +115,7 @@ body {
   line-height: 1;
 }
 .mother-container {
-  width: min(90%, 70.5rem);
+  width: min(90%, 80%);
   margin: 1rem auto;
 }
 li {
@@ -134,10 +135,12 @@ li {
 .nav--bar .logo {
   color: var(--clr-primary);
   font-size: var(--fs-h3);
+  font-family: var(--ff-bold);
 }
 .nav--bar svg {
   height: 3.6rem;
   width: 3.6rem;
+  stroke-width: 3;
   stroke: var(--clr-primary);
 }
 /* burger menu ----------------- */
@@ -155,15 +158,16 @@ li {
   display: flex;
   flex-direction: column;
   gap: 3.8rem;
-  margin-bottom: 12rem;
+  margin-bottom: 4rem;
 }
 .hero--head-title {
-  font-size: var(--fs-h1);
+  font-size: var(--fs-kilo);
   line-height: 1.05;
   font-family: var(--ff-bold);
-  letter-spacing: 0.1px;
+  letter-spacing: -1.5px;
   font-weight: 800;
-  max-width: 90%;
+  min-width: 90%;
+  /* max-width: 400px; */
   margin-bottom: 2.4rem;
 }
 .hero-sub-text {
@@ -181,10 +185,14 @@ li {
 .map-container {
   background-color: var(--clr-secondary-2);
   width: 100%;
-  height: 20rem;
+  min-height: 30rem;
 
   box-shadow: var(--shadow);
 }
+
+/* ==============  
+       freatured in section
+   ============== */
 
 .featured-in {
   display: flex;
@@ -192,28 +200,34 @@ li {
   align-items: center;
   gap: 2rem;
 }
-.featured-in img {
-  height: 5rem;
-  /* filter: brightness(0); */
-}
 
+.single-featured--container {
+  flex-shrink: 0;
+  flex-basis: 12rem;
+}
+.single-featured {
+  display: block;
+  max-width: 100%;
+  opacity: 60%;
+  filter: brightness(0);
+}
 /* hero title drill images */
 .drill-relative {
   position: relative;
 }
 .drill-1 {
-  width: 16rem;
+  width: 6em;
   position: absolute;
-  top: -3.8rem;
-  left: 3rem;
+  top: -1.86em;
+  left: 1em;
 
   transform: rotate(-225deg);
 }
 .drill-2 {
-  width: 16rem;
+  width: 6em;
   position: absolute;
-  top: -4rem;
-  left: -8.8rem;
+  top: -1.86em;
+  left: -4.44em;
 
   transform: rotate(-45deg);
 }
