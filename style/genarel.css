@@ -58,7 +58,7 @@ html {
   /* convert to 10px for using rem*/
   /* 10px / 16px = 0.625 = 62.5% */
   font-size: 62.5%;
-  /* overflow: hidden; */
+  overflow-x: hidden;
 }
 :root {
   /* base colors */
@@ -106,12 +106,15 @@ body {
   font-size: var(--fs-base);
   color: var(--clr-base);
   line-height: 1;
+  overflow-x: hidden;
 }
 img {
   display: block;
   max-width: 100%;
 }
-
+div > img {
+  border-radius: var(--border-r);
+}
 li {
   list-style: none;
 }
@@ -210,6 +213,10 @@ li {
   gap: 2rem;
   margin-top: 4rem;
   margin-bottom: 12rem;
+
+  /* animation name depand on the scorll that comes from JavaScript [right,or left]*/
+  animation: 6s linear infinite;
+  /* animation-name: logos-left; */
 }
 
 .single-featured--container {
@@ -263,7 +270,6 @@ li {
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: repeat(6, auto);
-  row-gap: 2rem;
 }
 .feature-info {
   /* background-color: #b3dddd; */
@@ -293,7 +299,7 @@ li {
   line-height: 1.3;
 }
 .feature-img {
-  margin-bottom: 12rem;
+  margin-bottom: 20rem;
 }
 /* ============================================ 
                   3-buttons
@@ -318,3 +324,17 @@ li {
 /* ------------------------------------------- 
       3.1- hero section btn (SHOP NOW)
 -------------------------------------------  */
+.single-featured--container {
+  animation: all;
+}
+
+@keyframes logos-left {
+  100% {
+    transform: translateX(-100%);
+  }
+}
+@keyframes logos-right {
+  100% {
+    transform: translateX(100%);
+  }
+}
