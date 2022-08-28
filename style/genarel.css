@@ -131,6 +131,13 @@ li {
   letter-spacing: 1.5px;
   margin-bottom: 1rem;
 }
+.section-head--title {
+  font-family: var(--ff-bold);
+  color: var(--clr-primary);
+  font-size: var(--fs-kilo);
+  letter-spacing: -1px;
+  margin-bottom: 12rem;
+}
 /* ============================================ 
                   2- sections work 
 ============================================  */
@@ -256,12 +263,9 @@ li {
            2.4- Features 01 02 03
 -------------------------------------------  */
 .featurs-title {
-  font-family: var(--ff-bold);
-  color: var(--clr-primary);
-  font-size: var(--fs-kilo);
-  letter-spacing: -1px;
-  margin-bottom: 12rem;
+  /* style comes from the globle section "section-head--title" */
 }
+
 .featurs-title span {
   font-size: var(--fs-mega);
   color: var(--clr-secondary-2);
