@@ -319,8 +319,8 @@ li {
 .single-review-container svg {
   /* fill: var(--clr-primary); */
   stroke: #94df01;
-  width: 23rem;
-  height: 23rem;
+  width: 3rem;
+  height: 3rem;
 }
 
 .qoutation {
