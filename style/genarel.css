@@ -74,7 +74,7 @@ html {
   /* secondary colors */
   --clr-secondary-1: #94df01;
   --clr-secondary-2: #018f8f;
-  --clr-secondary-lt: #80c7c7;
+  --clr-secondary-lt: #80c7c794;
 
   /* base font size */
   --fs-base: 1.6rem;
@@ -137,7 +137,7 @@ li {
   color: var(--clr-primary);
   font-size: var(--fs-kilo);
   letter-spacing: -1px;
-  margin-bottom: 12rem;
+  margin-bottom: 11rem;
 }
 /* ============================================ 
                   2- sections work 
@@ -313,14 +313,15 @@ li {
 .reviews-container {
   display: flex;
   gap: 3rem;
-  border: 2px solid red;
+  /* border: 2px solid red; */
 
   position: relative;
+  margin-bottom: 11rem;
 }
 
 .single-review-container {
-  min-width: 80%;
-  background-color: var(--clr-secondary-2);
+  min-width: 100%;
+  background-color: var(--clr-secondary-lt);
   padding: 4rem 3rem;
   border-radius: var(--border-r);
   position: relative;
@@ -349,7 +350,7 @@ li {
   height: var(--fs-h3);
 }
 .star {
-  fill: #fdcc0d;
+  /* fill: #FDCC0D ; */
 }
 
 /* .facebook-icon {
@@ -359,9 +360,13 @@ li {
 } */
 
 .single-review--text {
-  text-align: center;
-  color: var(--clr-primary-lt);
+  color: var(--clr-base-dk);
   line-height: 1.4;
+  font-size: var(--fs-h3);
+  max-width: 18em;
+  margin-inline: auto;
+
+  text-align: center;
   margin-bottom: 3rem;
 }
 .single-review--name {
@@ -387,6 +392,32 @@ li {
   font-weight: 600;
   padding: 0.5em 1.2em;
   border-radius: var(--border-r);
+}
+
+/* ------------------------------------------- 
+      3.2- reviews left and right chevron
+-------------------------------------------  */
+.reviews-btns {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  position: absolute;
+}
+.reviews-btns svg {
+  fill: var(--clr-primary);
+  stroke: var(--clr-primary);
+  height: var(--fs-mega);
+  width: var(--fs-mega);
+}
+.reviews-chevron--right {
+  top: 50%;
+  right: 0;
+  transform: translate(15%, -50%);
+}
+.reviews-chevron--left {
+  top: 50%;
+  left: 0;
+  transform: translate(-15%, -50%);
 }
 
 /* ------------------------------------------- 
