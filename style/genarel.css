@@ -315,11 +315,22 @@ li {
   flex-direction: column;
   gap: 14rem;
 }
+
 .single-review-container svg {
-  stroke: var(--clr-primary);
+  /* fill: var(--clr-primary); */
+  stroke: #94df01;
+  width: 23rem;
+  height: 23rem;
+}
+
+.qoutation {
+  /* color: red; */
+  /* stroke: red; */
+  /* stroke: #000 !important; */
+  fill: red !important;
 }
 .single-review-container {
-  background-color: #018f8f;
+  /* background-color: #018f8f; */
 }
 .stars-container {
   display: flex;
