@@ -74,6 +74,7 @@ html {
   /* secondary colors */
   --clr-secondary-1: #94df01;
   --clr-secondary-2: #018f8f;
+  --clr-secondary-lt: #80c7c7;
 
   /* base font size */
   --fs-base: 1.6rem;
@@ -286,8 +287,7 @@ li {
   font-family: var(--ff-base);
   font-weight: 600;
   font-size: var(--fs-giga);
-  color: var(--clr-secondary-2);
-  opacity: 50%;
+  color: var(--clr-secondary-lt);
   position: absolute;
   top: -1em;
   left: -0.035em;
@@ -312,33 +312,63 @@ li {
 /* s-title and head title style comes from globel secton */
 .reviews-container {
   display: flex;
-  flex-direction: column;
-  gap: 14rem;
+  gap: 3rem;
+  border: 2px solid red;
+
+  position: relative;
 }
 
-.single-review-container svg {
-  /* fill: var(--clr-primary); */
-  stroke: #94df01;
-  width: 3rem;
-  height: 3rem;
-}
-
-.qoutation {
-  /* color: red; */
-  /* stroke: red; */
-  /* stroke: #000 !important; */
-  fill: red !important;
-}
 .single-review-container {
-  /* background-color: #018f8f; */
+  min-width: 80%;
+  background-color: var(--clr-secondary-2);
+  padding: 4rem 3rem;
+  border-radius: var(--border-r);
+  position: relative;
 }
+
+.quotation_icon {
+  width: 9rem;
+  height: 9rem;
+  fill: var(--clr-primary);
+
+  position: absolute;
+  top: 0;
+  right: 50%;
+  transform: translate(50%, -50%);
+}
+
 .stars-container {
   display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6em;
+  margin-bottom: 3rem;
 }
 .stars-container svg {
-  width: 5rem;
-  height: 5rem;
+  width: var(--fs-h3);
+  height: var(--fs-h3);
 }
+.star {
+  fill: #fdcc0d;
+}
+
+/* .facebook-icon {
+  fill: var(--clr-primary-lt);
+  width: var(--fs-h1) !important;
+  height: var(--fs-h1) !important;
+} */
+
+.single-review--text {
+  text-align: center;
+  color: var(--clr-primary-lt);
+  line-height: 1.4;
+  margin-bottom: 3rem;
+}
+.single-review--name {
+  text-align: center;
+  font-size: var(--fs-milli);
+}
+
 /* ============================================ 
                   3-buttons
 ============================================  */
