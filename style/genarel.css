@@ -101,6 +101,8 @@ html {
   --shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
     rgba(0, 0, 0, 0.3) 0px 30px 60px -30px,
     rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+
+  --shadow-lt: 0px 0px 13px -6px rgba(0, 0, 0, 0.51);
 }
 body {
   font-family: var(--ff-base);
@@ -138,6 +140,17 @@ li {
   font-size: var(--fs-kilo);
   letter-spacing: -1px;
   margin-bottom: 11rem;
+}
+.btn {
+  color: white;
+  display: inline-block;
+  font-family: var(--ff-bold);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  background-color: var(--clr-primary);
+  font-weight: 600;
+  padding: 0.5em 1.2em;
+  border-radius: var(--border-r);
 }
 /* ============================================ 
                   2- sections work 
@@ -374,6 +387,109 @@ li {
   font-size: var(--fs-milli);
 }
 
+/* ------------------------------------------- 
+           2.5- packages section
+-------------------------------------------  */
+.packages-section {
+  margin-bottom: 11rem;
+}
+.packages-container {
+  display: flex;
+  flex-direction: column;
+  gap: 8rem;
+}
+.package-img-container {
+  width: 100%;
+  height: 20rem;
+  background: linear-gradient(
+      22deg,
+      rgba(238, 2, 2, 0.8) 0%,
+      rgba(238, 2, 2, 0.4) 49%,
+      rgba(238, 2, 2, 0.16) 100%
+    ),
+    url("../images/packages/woodworking.jpg") no-repeat center / cover;
+
+  border-top-left-radius: var(--border-r);
+  border-top-right-radius: var(--border-r);
+
+  /* to move package heading to bottom */
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+
+  margin-bottom: 2rem;
+}
+
+.package-heading {
+  color: var(--clr-primary-lt);
+  font-size: var(--fs-kilo);
+  font-family: var(--ff-bold);
+  letter-spacing: -0.5px;
+}
+
+.package-price {
+  color: var(--clr-primary-lt);
+  font-family: var(--ff-base);
+  font-size: var(--fs-mega);
+  padding-left: 2rem;
+  padding-bottom: 0.5rem;
+}
+.package-price span {
+  font-size: var(--fs-h2);
+}
+
+.package-heading,
+.package-list {
+  padding: 2rem;
+}
+
+.single-package-container {
+  border-radius: var(--border-r);
+  box-shadow: var(--shadow-lt);
+  overflow: hidden;
+  position: relative;
+}
+
+.best-package {
+  box-shadow: var(--shadow);
+}
+.best-package:before {
+  content: "best value";
+  color: var(--clr-primary);
+  font-weight: 600;
+  font-size: var(--fs-milli);
+  background-color: yellow;
+  text-transform: uppercase;
+  letter-spacing: 1.3px;
+  padding: 0.2em 4em;
+  transform: rotate(45deg);
+  position: absolute;
+  top: 2.6em;
+  right: -4.3em;
+}
+
+.package-list {
+  font-size: var(--fs-h2);
+  font-weight: 500;
+  list-style: none;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1rem;
+}
+.package-list li {
+  /* just to center the icons with list li */
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.package-list svg {
+  height: 1.1em;
+  width: 1.1em;
+  fill: var(--clr-base-dk);
+}
+
 /* ============================================ 
                   3-buttons
 ============================================  */
@@ -381,17 +497,8 @@ li {
       3.1- hero section btn (SHOP NOW)
 -------------------------------------------  */
 .hero-btn {
-  color: white;
-  display: inline-block;
-  font-family: var(--ff-bold);
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
   text-decoration: none;
-  background-color: var(--clr-primary);
   font-size: var(--fs-h2);
-  font-weight: 600;
-  padding: 0.5em 1.2em;
-  border-radius: var(--border-r);
 }
 
 /* ------------------------------------------- 
@@ -420,6 +527,32 @@ li {
   transform: translate(-15%, -50%);
 }
 
+/* ------------------------------------------- 
+      3.3- package section btns (buy + more info)
+-------------------------------------------  */
+.package-btn {
+  font-size: var(--fs-h2);
+  cursor: pointer;
+  margin: 1.9rem;
+}
+.package-link:link,
+.package-link:visited {
+  /* display: inline-block; */
+  font-size: var(--fs-h2);
+  color: var(--clr-base);
+  text-decoration: none;
+}
+.package-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.2em;
+}
+.package-link svg {
+  width: var(--fs-h2);
+  height: var(--fs-h2);
+  fill: var(--clr-base);
+  stroke: var(--clr-base);
+}
 /* ------------------------------------------- 
       3.1- hero section btn (SHOP NOW)
 -------------------------------------------  */
