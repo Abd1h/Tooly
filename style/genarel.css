@@ -394,11 +394,14 @@ li {
   margin-bottom: 11rem;
 }
 .packages-container {
+  max-width: 35rem;
+  margin: auto;
   display: flex;
   flex-direction: column;
   gap: 8rem;
 }
-.package-img-container {
+
+.single-package-container .package-img-container {
   width: 100%;
   height: 20rem;
   background: linear-gradient(
@@ -418,6 +421,24 @@ li {
   justify-content: end;
 
   margin-bottom: 2rem;
+}
+.single-package-container:nth-child(2) .package-img-container {
+  background: linear-gradient(
+      22deg,
+      rgba(238, 2, 2, 0.8) 0%,
+      rgba(238, 2, 2, 0.4) 49%,
+      rgba(238, 2, 2, 0.16) 100%
+    ),
+    url("../images/packages/metal.jpg") no-repeat center center / cover;
+}
+.single-package-container:nth-child(3) .package-img-container {
+  background: linear-gradient(
+      22deg,
+      rgba(238, 2, 2, 0.8) 0%,
+      rgba(238, 2, 2, 0.4) 49%,
+      rgba(238, 2, 2, 0.16) 100%
+    ),
+    url("../images/packages/homeWorkShop.jpg") no-repeat center center / cover;
 }
 
 .package-heading {
@@ -452,17 +473,19 @@ li {
 
 .best-package {
   box-shadow: var(--shadow);
+  transform: scale(1.06);
 }
 .best-package:before {
   content: "best value";
   color: var(--clr-primary);
   font-weight: 600;
   font-size: var(--fs-milli);
-  background-color: yellow;
+  background-color: rgba(255, 255, 0, 1);
   text-transform: uppercase;
   letter-spacing: 1.3px;
   padding: 0.2em 4em;
   transform: rotate(45deg);
+
   position: absolute;
   top: 2.6em;
   right: -4.3em;
