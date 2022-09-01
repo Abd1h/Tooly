@@ -77,7 +77,7 @@ html {
   --clr-secondary-lt: #80c7c77e;
 
   /* base font size */
-  --fs-base: 1.6rem;
+  --fs-base: 1.7rem;
 
   /* larger  heading font sizes */
   --fs-giga: 6rem;
@@ -121,7 +121,10 @@ div > img {
 li {
   list-style: none;
 }
-
+a {
+  text-decoration: none;
+  color: var(--clr-base);
+}
 .mother-container {
   width: min(90%, 80rem);
   margin: 1rem auto;
@@ -166,7 +169,7 @@ li {
 
   margin-bottom: 3.6rem;
 }
-.nav--bar .logo {
+.logo {
   color: var(--clr-primary);
   font-size: var(--fs-kilo);
   font-family: var(--ff-bold);
@@ -519,17 +522,101 @@ li {
   width: 1.1em;
   fill: var(--clr-base-dk);
 }
-/* ============================================ 
-                  3-contect
-============================================  */
+
+/* ------------------------------------------- 
+              4- contact
+-------------------------------------------  */
 .contact-section {
   display: flex;
   flex-direction: column;
-  gap: 2rem;
+  gap: 5rem;
+
+  margin-bottom: 14rem;
 }
 .contact-section h2 {
   /* overwriting the value comming form "section-head--title" */
-  margin-bottom: 2rem !important;
+  margin-bottom: 1rem !important;
+}
+.input-field {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+
+  background-color: var(--clr-secondary-lt);
+  border-radius: var(--border-r);
+  padding: 1rem;
+}
+.single-input-container > * {
+  display: block;
+}
+.single-input-container label {
+  font-size: var(--fs-h3);
+  font-weight: 500;
+
+  margin-bottom: 0.3rem;
+}
+.single-input-container input,
+textarea {
+  font-family: var(--ff-base);
+  font-size: var(--fs-h3);
+  border: none;
+  background-color: var(--clr-secondary-lt);
+  padding: 0.3em;
+}
+.single-input-container input:focus,
+textarea:focus {
+  outline: none;
+}
+.single-input-container textarea {
+  resize: none;
+  max-width: 30rem;
+  max-height: 10rem;
+}
+
+/* ------------------------------------------- 
+              2.3- footer section
+-------------------------------------------  */
+.footer-section {
+  border-top: 0.2em solid var(--clr-primary);
+  font-size: var(--fs-h3);
+  padding: 4rem 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 3rem;
+  row-gap: 6rem;
+}
+.footer-section ul {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.footer-col-heading {
+  font-weight: 600;
+  color: var(--clr-base-dk);
+  margin-bottom: 3rem;
+}
+.footer-section svg {
+  width: var(--fs-h3);
+  height: var(--fs-h3);
+  fill: var(--clr-base-dk);
+}
+.contact-col li {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.social-media-container {
+  display: flex;
+  gap: 1rem;
+  padding: 1rem 0;
+}
+.icon-media {
+  width: var(--fs-h1) !important;
+  height: var(--fs-h1) !important;
+}
+
+.logo-col {
+  grid-row: 2;
 }
 /* ============================================ 
                   4-buttons
@@ -594,12 +681,17 @@ li {
   fill: var(--clr-base);
   stroke: var(--clr-base);
 }
+
+/* ------------------------------------------- 
+      3.3- contact section btn  (send-btn)
+-------------------------------------------  */
+.send-btn {
+  align-self: flex-start;
+  font-size: var(--fs-h3);
+}
 /* ------------------------------------------- 
       3.1- hero section btn (SHOP NOW)
 -------------------------------------------  */
-.single-featured--container {
-  animation: all;
-}
 
 @keyframes logos-left {
   100% {

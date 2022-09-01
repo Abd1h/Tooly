@@ -449,29 +449,37 @@
    
           <!--  ============ contact SECTION  ============-->
 <section class="contact-section">
-    <p class="section-start--s-title">contact</p>
-    <!-- first flex child -->
+  <!-- first flex child -->
   <div>
+    <p class="section-start--s-title">contact</p>
     <h2 class="section-head--title">Visit Us</h2>
-   <div class=" map-container"><img src="" alt="" />
-        </div> 
+
+   <div class=" map-container">
+    <img src="" alt="" />
+  </div> 
   </div>
 
-    <!-- second flex child -->
+  <!-- second flex child -->
   <div>
     <h2 class="section-head--title">Send a Message</h2>
-    <div>
-      <label for="full-name">Full name</label>
-      <input id="full-name" type="text" placeholder="Ali Amir">
-    </div>
-    <div>
+    <div class="input-field">
+      <div class="single-input-container" >
+        <label for="full-name">Full Name</label>
+        <input id="full-name" type="text" placeholder="Ali Amir">
+      </div>
+    <div class="single-input-container" >
       <label for="email">Eamil</label>
-      <input id="email" type="text" placeholder="me@example.com">
+      <input id="email" type="text" placeholder="Me@example.com">
     </div>
-    <div>
-      <textarea name="#" id="message" cols="auto" rows="auto"></textarea>
-    </div>
+    <div class="single-input-container" >
+      <label for="message">Message</label>
+      <textarea class="textarea" placeholder="Hello, I want to ask you about .." name="#" id="message"></textarea>
 
+      
+    </div>
+    <button type="submit" class="btn send-btn">Send</button>
+    
+  </div>
   </div>
 </section>
  
@@ -508,19 +516,19 @@
       <p class="footer-col-heading">Contact us</p>
       <ul>
         <li>
-          <svg class="icon-media">
+          <svg>
               <use href="images/icons.svg#icon-envelope"></use>
             </svg>
 
           tooly@gmail.com</li>
         <li>
-          <svg class="icon-media">
+          <svg>
               <use href="images/icons.svg#icon-telephone"></use>
             </svg>
         
           +96477********</li>
         <li>
-          <svg class="icon-media">
+          <svg>
               <use href="images/icons.svg#icon-telephone"></use>
             </svg>
         
