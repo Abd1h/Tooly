@@ -154,6 +154,7 @@ a {
   font-weight: 600;
   padding: 0.5em 1.2em;
   border-radius: var(--border-r);
+  cursor: pointer;
 }
 /* ============================================ 
                   2- sections work 
@@ -276,6 +277,37 @@ a {
   transform: rotate(-45deg);
 }
 
+/* ------------------------------------------- 
+           2.4- about us
+-------------------------------------------  */
+.about-section-container {
+  margin-bottom: 12rem;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 1rem;
+}
+.about-box-1,
+.about-box-2 {
+  color: white;
+  border-radius: var(--border-r);
+  padding: 1.5rem;
+  font-weight: 500;
+  font-size: var(--fs-h3);
+  font-family: var(--ff-bold);
+  line-height: 1.2;
+}
+.about-box-1 span,
+.about-box-2 span {
+  font-weight: 600;
+}
+.about-box-1 {
+  background: var(--clr-primary);
+}
+.about-box-2 {
+  background-color: var(--clr-secondary-2);
+}
 /* ------------------------------------------- 
            2.4- Features 01 02 03
 -------------------------------------------  */
