@@ -37,13 +37,13 @@ Paragraph default: 1.6
 }
 
 /* Remove default margin */
-*{
+* {
   margin: 0;
   padding: 0;
 }
 
 /* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
-ul[role='list'] {
+ul[role="list"] {
   list-style: none;
 }
 
@@ -52,7 +52,6 @@ html:focus-within {
   scroll-behavior: smooth;
 }
 
-
 /* A elements that don't have a class get default styles
 a:not([class]) {
   text-decoration-skip-ink: auto;
@@ -60,7 +59,8 @@ a:not([class]) {
 
 /* Make images easier to work with */
 img,
-picture,svg {
+picture,
+svg {
   max-width: 100%;
   display: block;
 }
@@ -76,17 +76,16 @@ select {
   font: inherit;
 }
 
-a{
+a {
   text-decoration: none;
 }
-
 
 /* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
 @media (prefers-reduced-motion: reduce) {
   html:focus-within {
-   scroll-behavior: auto;
+    scroll-behavior: auto;
   }
-  
+
   *,
   *::before,
   *::after {
@@ -107,15 +106,13 @@ body {
   min-height: 100vh;
   text-rendering: optimizeSpeed;
   line-height: 1.5;
-  
-  overflow-x: hidden;
-  }
 
+  overflow-x: hidden;
+}
 
 /* ============================================ 
                   -global css
 ============================================  */
-
 
 :root {
   /* base colors */
@@ -133,7 +130,6 @@ body {
   --clr-secondary-lt: #80c7c77e;
 
   /*  font sizes */
-  --fs-base: var(--fs-400);
 
   --fs-300: 1.4rem;
   --fs-400: 1.6rem;
@@ -141,27 +137,30 @@ body {
   --fs-600: 2.2rem;
   --fs-650: 2.8rem;
   --fs-700: 3.1rem;
-  --fs-800: 4rem ;
-  --fs-900: 6rem ;
+  --fs-800: 4rem;
+  --fs-900: 6rem;
 
-  --fs-heading: var(--fs-700);
   --fs-xs-title: var(--fs-300);
-  --fs-btn:var(--fs-600);
+  --fs-base: var(--fs-400);
+  --fs-btn: var(--fs-600);
+  --fs-heading: var(--fs-700);
 
   /* font family */
   --ff-base: "Rubik", sans-serif;
   --ff-bold: "Montserrat", sans-serif;
-  
- /* font weight */
-  --base-bold:400
-  --Semi-bold: 500
-  --heading-Bold: 700
+
+  /* font weight */
+  --base-bold: 400;
+  --Semi-bold: 500;
+  --heading-Bold: 700;
 
   /* line height */
-  --line-height-:
+  --line-height-: 1;
 
   /* border raduse */
   --border-r: 0.2rem;
+
+  --text-max-width: 80%;
   /* --shadow */
   --shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
     rgba(0, 0, 0, 0.3) 0px 30px 60px -30px,
@@ -169,21 +168,28 @@ body {
 
   --shadow-lt: 0px 0px 13px -6px rgba(0, 0, 0, 0.51);
 }
-body{
-    
+body {
   font-family: var(--ff-base);
   font-size: var(--fs-base);
   color: var(--clr-base);
 
   display: flex;
   flex-direction: column;
-  gap: 5rem;
+  gap: 10rem;
 }
+
+/* centring and padding */
 .container {
   --max-width: 1110px;
-  --padding :1.2rem;
-  
-  width: min(100% - (var(--padding) * 2) , var(--max-width));
+  --padding: 1.2rem;
+
+  width: min(100% - (var(--padding) * 2), var(--max-width));
+  margin-inline: auto;
+}
+/* centring and padding for sections with different background color*/
+.container-background-color {
+  padding-inline: 1.2rem;
+  width: min(100%, 1110px);
   margin-inline: auto;
 }
 .section-start--s-title {
@@ -199,22 +205,24 @@ body{
   color: var(--clr-primary);
   font-size: var(--fs-heading);
   letter-spacing: -1px;
+  margin-bottom: 12rem;
 }
-.title-margin {
-  margin-bottom: 8rem;
-}
+
 .btn {
-  color: white;
-  display: inline-block;
+  color: var(--clr-base-lt);
   font-family: var(--ff-bold);
   font-size: var(--fs-btn);
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
   background-color: var(--clr-primary);
-  font-weight: 600;
-  padding: 0.5em 1.2em;
   border-radius: var(--border-r);
+
+  display: inline-block;
+  text-decoration: none;
+  border: none;
+  text-transform: uppercase;
   cursor: pointer;
+  letter-spacing: 0.1em;
+  font-weight: var(--Semi-bold);
+  padding: 0.5em 1.2em;
 }
 /* ============================================ 
                   2- sections work 
@@ -255,29 +263,24 @@ body{
 .hero-section {
   display: flex;
   flex-direction: column;
-  gap: 3.8rem;
+  gap: 5rem;
 }
 .hero--head-title {
   font-size: var(--fs-800);
   font-family: var(--ff-bold);
   color: var(--clr-base-dk);
-  line-height: 1.05;
+  line-height: var(--line-height-);
   letter-spacing: -1.5px;
-  font-weight: 800;
   min-width: 90%;
+
   /* max-width: 400px; */
   margin-bottom: 2.4rem;
 }
 .hero-sub-text {
-  line-height: 1.2;
-  margin-bottom: 6rem;
+  max-width: var(--text-max-width);
+  margin-bottom: 5rem;
 }
-/* deleting some text
-.hero-sub-text span {
-  color: var(--clr-primary);
-  font-size: var(--fs-300);
-  font-weight: 500;
-} */
+
 .map-container {
   background-color: var(--clr-secondary);
   width: 100%;
@@ -295,8 +298,6 @@ body{
   justify-content: center;
   align-items: center;
   gap: 2rem;
-  margin-top: 4rem;
-  margin-bottom: 12rem;
 
   /* animation name depand on the scorll that comes from JavaScript [right,or left]*/
   animation: 6s linear infinite;
@@ -308,11 +309,10 @@ body{
   flex-basis: 12rem;
 }
 .single-featured {
-  display: block;
-  max-width: 100%;
   opacity: 60%;
   filter: brightness(0);
 }
+
 /* hero title drill images */
 .drill-relative {
   position: relative;
@@ -340,26 +340,19 @@ body{
            2.4- about us
 -------------------------------------------  */
 .about-section {
-  margin-bottom: 12rem;
   font-size: var(--fs-600);
-  line-height: 1.2;
-  /* text-transform: capitalize; */
-  color: #ffffffef;
-}
-.about-section h2 {
-  margin-bottom: 4rem !important;
-}
+  color: var(--clr-base-lt);
 
+  /* text-transform: capitalize; */
+}
 .about-text-1 span,
 .about-text-2 span {
-  font-weight: 600;
+  font-weight: var(--Semi-bold);
 }
 .about-grid {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
   grid-template-rows: 1fr 1fr;
-  row-gap: 0.5rem;
-  column-gap: 6rem;
   gap: 0.8rem;
 }
 
@@ -389,10 +382,10 @@ body{
 -------------------------------------------  */
 .featurs {
   background-color: var(--clr-secondary-lt);
-  box-shadow: 0px -20px 0px 20px var(--clr-secondary-lt);
 }
 
 .featurs-title span {
+  /*  for number 3 in the section title */
   font-size: var(--fs-800);
   color: var(--clr-secondary);
 }
@@ -400,51 +393,48 @@ body{
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: repeat(6, auto);
+  row-gap: 3.8rem;
 }
-.feature-info {
-  /* background-color: #b3dddd; */
-  /* padding: 2rem; */
+.featurs-grid--container > :nth-child(even) {
+  /* adding margin bigger than grid gap only after feature image */
+  margin-bottom: 12rem;
+}
+.featurs-grid--container > :last-child {
+  /* adding smaller margin for the section ending */
   margin-bottom: 4rem;
+}
+
+.feature-info {
   position: relative;
 }
-.feature-info .feature-num {
-  display: block;
+.feature-num {
   font-family: var(--ff-base);
-  font-weight: 600;
+  font-weight: var(--Semi-bold);
   font-size: var(--fs-900);
   color: var(--clr-secondary);
   opacity: 35%;
   position: absolute;
-  top: -1em;
+  top: -1.3em;
   left: -0.035em;
 }
 
-.feature-info .feature-title {
+.feature-title {
   font-size: var(--fs-600);
   color: var(--clr-base-dk);
   margin-bottom: 1.8rem;
 }
-.feature-info .feature-text {
-  max-width: 20em;
-  line-height: 1.3;
+.feature-text {
+  max-width: var(--text-max-width);
 }
-.feature-img {
-  margin-bottom: 14rem;
-}
-.feature-img:last-child {
-  margin-bottom: 5rem;
-}
+
 /* ------------------------------------------- 
            2.4- reviews 
 -------------------------------------------  */
 /* s-title and head title style comes from globel secton */
-.reviews {
-  margin-top: 8rem;
-}
+
 .reviews-container {
   display: flex;
   gap: 3rem;
-  /* border: 2px solid red; */
 
   position: relative;
   margin-bottom: 11rem;
@@ -453,8 +443,8 @@ body{
 .single-review-container {
   min-width: 100%;
   background-color: var(--clr-secondary-lt);
-  padding: 4rem 3rem;
   border-radius: var(--border-r);
+  padding: 4rem 3rem;
   position: relative;
 }
 
@@ -477,22 +467,12 @@ body{
   margin-bottom: 3rem;
 }
 .stars-container svg {
-  width: var(--fs-500);
-  height: var(--fs-500);
+  width: var(--fs-600);
+  height: var(--fs-600);
 }
-.star {
-  /* fill: #FDCC0D ; */
-}
-
-/* .facebook-icon {
-  fill: var(--clr-primary-lt);
-  width: var(--fs-h1) !important;
-  height: var(--fs-h1) !important;
-} */
 
 .single-review--text {
   color: var(--clr-base-dk);
-  line-height: 1.4;
   font-size: var(--fs-500);
   max-width: 18em;
   margin-inline: auto;
@@ -506,20 +486,48 @@ body{
 }
 
 /* ------------------------------------------- 
-           2.5- packages section
+2.5- packages section
 -------------------------------------------  */
-.packages-section {
-  margin-bottom: 11rem;
-}
+
 .packages-container {
-  max-width: 35rem;
-  margin: auto;
   display: flex;
   flex-direction: column;
+  align-items: center;
   gap: 8rem;
 }
+.single-package-container {
+  max-width: 20em;
 
-.single-package-container .package-img-container {
+  border-radius: var(--border-r);
+  box-shadow: var(--shadow-lt);
+  overflow: hidden;
+  position: relative;
+}
+
+.package-heading {
+  color: var(--clr-base-lt);
+  font-size: var(--fs-heading);
+  font-family: var(--ff-bold);
+  letter-spacing: -0.5px;
+}
+.package-price {
+  color: var(--clr-base-lt);
+  font-family: var(--ff-base);
+  font-size: var(--fs-800);
+  padding-left: 2rem;
+  padding-bottom: 0.5rem;
+}
+.package-price span {
+  /* $ */
+  font-size: var(--fs-600);
+}
+
+.package-heading,
+.package-list {
+  padding: 2rem;
+}
+
+.package-img-container {
   width: 100%;
   height: 20rem;
   background: linear-gradient(
@@ -536,8 +544,8 @@ body{
   /* to move package heading to bottom */
   display: flex;
   flex-direction: column;
-  justify-content: end;
-
+  justify-content: flex-end;
+  line-height: 1;
   margin-bottom: 2rem;
 }
 .single-package-container:nth-child(2) .package-img-container {
@@ -549,6 +557,7 @@ body{
     ),
     url("../images/packages/metal.jpg") no-repeat center center / cover;
 }
+
 .single-package-container:nth-child(3) .package-img-container {
   background: linear-gradient(
       22deg,
@@ -557,36 +566,6 @@ body{
       rgba(238, 2, 2, 0.16) 100%
     ),
     url("../images/packages/homeWorkShop.jpg") no-repeat center center / cover;
-}
-
-.package-heading {
-  color: var(--clr-primary-lt);
-  font-size: var(--fs-heading);
-  font-family: var(--ff-bold);
-  letter-spacing: -0.5px;
-}
-
-.package-price {
-  color: var(--clr-primary-lt);
-  font-family: var(--ff-base);
-  font-size: var(--fs-800);
-  padding-left: 2rem;
-  padding-bottom: 0.5rem;
-}
-.package-price span {
-  font-size: var(--fs-600);
-}
-
-.package-heading,
-.package-list {
-  padding: 2rem;
-}
-
-.single-package-container {
-  border-radius: var(--border-r);
-  box-shadow: var(--shadow-lt);
-  overflow: hidden;
-  position: relative;
 }
 
 .best-package {
@@ -605,14 +584,13 @@ body{
   transform: rotate(45deg);
 
   position: absolute;
-  top: 2.6em;
+  top: 2.3em;
   right: -4.3em;
 }
 
 .package-list {
   font-size: var(--fs-600);
-  font-weight: 500;
-  list-style: none;
+  font-weight: var(--Semi-bold);
 
   display: flex;
   flex-direction: column;
@@ -638,8 +616,6 @@ body{
   display: flex;
   flex-direction: column;
   gap: 5rem;
-
-  margin-bottom: 14rem;
 }
 .contact-section h2 {
   /* overwriting the value comming form "section-head--title" */
@@ -659,13 +635,12 @@ body{
 }
 .single-input-container label {
   font-size: var(--fs-500);
-  font-weight: 500;
+  font-weight: var(--Semi-bold);
 
   margin-bottom: 0.3rem;
 }
 .single-input-container input,
 textarea {
-  font-size: var(--fs-500);
   border: none;
   background-color: var(--clr-secondary-lt);
   padding: 0.3em;
@@ -675,9 +650,10 @@ textarea:focus {
   outline: none;
 }
 .single-input-container textarea {
-  resize: none;
+  resize: vertical;
   max-width: 30rem;
-  max-height: 10rem;
+  max-height: 20rem;
+  min-height: 8rem;
 }
 
 /* ------------------------------------------- 
@@ -732,7 +708,6 @@ textarea:focus {
       3.1- hero section btn (SHOP NOW)
 -------------------------------------------  */
 .hero-btn {
-
 }
 
 /* ------------------------------------------- 
