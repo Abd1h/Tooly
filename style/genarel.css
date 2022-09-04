@@ -78,6 +78,7 @@ select {
 
 a {
   text-decoration: none;
+  color: inherit;
 }
 
 /* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
@@ -160,7 +161,7 @@ body {
   /* border raduse */
   --border-r: 0.2rem;
 
-  --text-max-width: 80%;
+  --text-max-width: min(80%, 30em);
   /* --shadow */
   --shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
     rgba(0, 0, 0, 0.3) 0px 30px 60px -30px,
@@ -269,7 +270,7 @@ body {
   font-size: var(--fs-800);
   font-family: var(--ff-bold);
   color: var(--clr-base-dk);
-  line-height: var(--line-height-);
+  line-height: 1.05;
   letter-spacing: -1.5px;
   min-width: 90%;
 
@@ -303,7 +304,9 @@ body {
   animation: 6s linear infinite;
   /* animation-name: logos-left; */
 }
-
+.about-title {
+  margin-bottom: 1rem !important;
+}
 .single-featured--container {
   flex-shrink: 0;
   flex-basis: 12rem;
@@ -660,13 +663,21 @@ textarea:focus {
               2.3- footer section
 -------------------------------------------  */
 .footer-section {
+  background-color: var(--clr-base-dk);
+  color: var(--clr-base-lt);
   border-top: 0.2em solid var(--clr-primary);
-  font-size: var(--fs-500);
-  padding: 4rem 0;
+  padding-block: 4rem;
+
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: auto auto;
   column-gap: 3rem;
   row-gap: 6rem;
+}
+
+.footer-section svg {
+  width: var(--fs-400);
+  height: var(--fs-400);
+  fill: var(--clr-base-lt);
 }
 .footer-section ul {
   display: flex;
@@ -674,14 +685,10 @@ textarea:focus {
   gap: 1rem;
 }
 .footer-col-heading {
-  font-weight: 600;
-  color: var(--clr-base-dk);
+  font-weight: var(--Semi-bold);
+  font-size: var(--fs-500);
+  color: var(--clr-base-lt);
   margin-bottom: 3rem;
-}
-.footer-section svg {
-  width: var(--fs-500);
-  height: var(--fs-500);
-  fill: var(--clr-base-dk);
 }
 .contact-col li {
   display: inline-flex;
@@ -690,8 +697,8 @@ textarea:focus {
 }
 .social-media-container {
   display: flex;
-  gap: 1rem;
-  padding: 1rem 0;
+  gap: 1.5rem;
+  padding: 2rem 0;
 }
 .icon-media {
   width: var(--fs-650) !important;

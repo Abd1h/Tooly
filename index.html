@@ -25,7 +25,7 @@
       <!--------------- navigation --------------->
       <nav class="nav--bar">
         <h1 class="logo">Tooly</h1>
-        <ul class="nav--links">
+        <ul role="list" class="nav--links">
           <li class="link"><a href="#"></a>Shop</li>
           <li class="link"><a href="#"></a>Why use?</li>
           <li class="link"><a href="#"></a>contact</li>
@@ -161,7 +161,7 @@
     <!--  ============ about us SECTION ============-->
     <section class="about-section container">
       <p class="section-start--s-title">About Us</p>
-      <h2 class="section-head--title">Our Mission</h2>
+      <h2 class="section-head--title about-title">Our Mission</h2>
       <div class="about-grid">
         <div class="about-text-1">
           <p>
@@ -384,7 +384,7 @@
             <h2 class="package-price">199<span>$</span></h2>
           </div>
 
-          <ul class="package-list">
+          <ul role="list" class="package-list">
             <li>
               <svg><use href="images/icons.svg#icon-check-fill"></use></svg>
               Table Saw
@@ -425,7 +425,7 @@
             <h2 class="package-price">249<span>$</span></h2>
           </div>
 
-          <ul class="package-list">
+          <ul role="list" class="package-list">
             <li>
               <svg><use href="images/icons.svg#icon-check-fill"></use></svg>
               Welder
@@ -469,7 +469,7 @@
             <h2 class="package-price">99<span>$</span></h2>
           </div>
 
-          <ul class="package-list">
+          <ul role="list" class="package-list">
             <li>
               <svg><use href="images/icons.svg#icon-check-fill"></use></svg>
               Power Drill
@@ -544,35 +544,44 @@
     </section>
 
     <!--  ============ FOOTER  ============-->
-    <footer class="footer-section container">
+    <footer class="footer-section container-background-color">
       <div class="logo-col">
         <a href="#"><h1 class="logo">Tooly</h1></a>
         <p class="text">
           grow your workshop <br />
           without breaking the bank!
         </p>
+
         <div class="social-media-container">
-          <svg class="icon-media">
-            <use href="images/icons.svg#icon-facebook"></use>
-          </svg>
+          <a href="#">
+            <svg class="icon-media">
+              <use href="images/icons.svg#icon-facebook"></use>
+            </svg>
+          </a>
 
-          <svg class="icon-media">
-            <use href="images/icons.svg#icon-instagram"></use>
-          </svg>
+          <a href="#">
+            <svg class="icon-media">
+              <use href="images/icons.svg#icon-instagram"></use>
+            </svg>
+          </a>
 
-          <svg class="icon-media">
-            <use href="images/icons.svg#icon-tiktok"></use>
-          </svg>
+          <a href="#">
+            <svg class="icon-media">
+              <use href="images/icons.svg#icon-tiktok"></use>
+            </svg>
+          </a>
 
-          <svg class="icon-media">
-            <use href="images/icons.svg#icon-youtube"></use>
-          </svg>
+          <a href="#">
+            <svg class="icon-media">
+              <use href="images/icons.svg#icon-youtube"></use>
+            </svg>
+          </a>
         </div>
       </div>
 
       <div class="contact-col">
         <p class="footer-col-heading">Contact us</p>
-        <ul>
+        <ul role="list">
           <li>
             <svg>
               <use href="images/icons.svg#icon-envelope"></use>
@@ -599,19 +608,23 @@
 
       <div>
         <p class="footer-col-heading">Company</p>
-        <ul>
-          <li><a href="#"></a>About Tooly</li>
-          <li><a href="#"></a>Careers</li>
-          <li><a href="#"></a>Apply for a Job</li>
+        <ul role="list">
+          <li><a href="#"> About Tooly </a></li>
+
+          <li><a href="#"> Careers </a></li>
+
+          <li><a href="#"> Apply for a Job </a></li>
         </ul>
       </div>
 
       <div>
         <p class="footer-col-heading">Resources</p>
-        <ul>
-          <li><a href="#"></a>PowerTools Reviews</li>
-          <li><a href="#"></a>Privacy & terms</li>
-          <li><a href="#"></a>Help center</li>
+        <ul role="list">
+          <li><a href="#"> PowerTools Reviews </a></li>
+
+          <li><a href="#"> Privacy & terms </a></li>
+
+          <li><a href="#"> Help center </a></li>
         </ul>
       </div>
     </footer>
