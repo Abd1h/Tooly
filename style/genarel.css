@@ -162,6 +162,7 @@ body {
   --border-r: 0.2rem;
 
   --text-max-width: min(80%, 30em);
+
   /* --shadow */
   --shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
     rgba(0, 0, 0, 0.3) 0px 30px 60px -30px,
@@ -206,6 +207,7 @@ body {
   color: var(--clr-primary);
   font-size: var(--fs-heading);
   letter-spacing: -1px;
+  line-height: 1;
   margin-bottom: 12rem;
 }
 
@@ -236,8 +238,6 @@ body {
   justify-content: space-between;
   align-items: center;
   height: 6vh;
-
-  margin-bottom: 3.6rem;
 }
 .logo {
   color: var(--clr-primary);
@@ -321,22 +321,18 @@ body {
   position: relative;
 }
 .drill-1 {
-  max-width: none;
-  width: 6em;
+  width: 7.2em;
   position: absolute;
-  top: -1.86em;
-  left: 1em;
-
-  transform: rotate(-225deg);
+  top: 0.85em;
+  left: -0.69em;
 }
 .drill-2 {
-  max-width: none;
-  width: 6em;
+  width: 7.1em;
   position: absolute;
-  top: -1.86em;
-  left: -4.44em;
+  top: 0.85em;
+  left: 0.1em;
 
-  transform: rotate(-45deg);
+  transform: rotate(180deg);
 }
 
 /* ------------------------------------------- 
