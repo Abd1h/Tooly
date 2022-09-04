@@ -20,546 +20,606 @@
     <script defer src="script.js"></script>
   </head>
   <body>
-    <div class="mother-container">
-      
-      <!--============ hero SECTION  ============-->
-      <header class="hero-section">
+    <!--============ hero SECTION  ============-->
+    <header class="hero-section container">
+      <!--------------- navigation --------------->
+      <nav class="nav--bar">
+        <h1 class="logo">Tooly</h1>
+        <ul class="nav--links">
+          <li class="link"><a href="#"></a>Shop</li>
+          <li class="link"><a href="#"></a>Why use?</li>
+          <li class="link"><a href="#"></a>contact</li>
+        </ul>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="1.5"
+          stroke="currentColor"
+          class="w-6 h-6"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
+          />
+        </svg>
+      </nav>
 
-        <!--------------- navigation --------------->
-        <nav class="nav--bar">
-          <h1 class="logo">Tooly</h1>
-          <ul class="nav--links">
-            <li class="link"><a href="#"></a>Shop</li>
-            <li class="link"><a href="#"></a>Why use?</li>
-            <li class="link"><a href="#"></a>contact</li>
-          </ul>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke-width="1.5"
-            stroke="currentColor"
-            class="w-6 h-6"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
-            />
-          </svg>
-        </nav>
-
-        <div class="hero-Section--left">
-          <!-- notes:for the text "power" & "tools" are both in a spam "relative" >>> img "absolute" -->
-          <h1 class="hero--head-title">
-            Original
-            <span class="drill-relative"
-              >Power
-              <!-- drill shark images -->
-              <img
-                src="images/logo/header titile drill2.png"
-                alt=""
-                class="drill-1" /></span
-            ><br />
-            <span class="drill-relative"
-              >Tools
-              <img
-                src="images/logo/header titile drill2.png"
-                alt=""
-                class="drill-2"
-              />
-            </span>
-            for less than half the price!
-          </h1>
-          <p class="hero-sub-text">
-            grow your workshop without breaking the bank! <br />
-            those tools are build to last forever, so why not buying them used?
-          </p>
-          <a href="#" class="hero-btn btn">Shop now</a>
-        </div>
-        <div class="hero-section--right map-container">
-          <img src="" alt="" />
-        </div>
-
-        <!--------------- featured in SECTION --------------->
-        <section class="featured-in-section">
-          <!-- one -->
-          <div class="single-featured--container">
+      <div class="hero-Section--left">
+        <!-- notes:for the text "power" & "tools" are both in a spam "relative" >>> img "absolute" -->
+        <h1 class="hero--head-title" class="title-margin">
+          Original
+          <span class="drill-relative"
+            >Power
+            <!-- drill shark images -->
             <img
-              src="images/logos/DeWalt_logo.png"
+              src="images/logo/header titile drill2.png"
               alt=""
-              class="single-featured"
-            />
-          </div>
-          <div class="single-featured--container">
+              class="drill-1" /></span
+          ><br />
+          <span class="drill-relative"
+            >Tools
             <img
-              src="images/logos/ryobi-logo-png-transparent.png"
+              src="images/logo/header titile drill2.png"
               alt=""
-              class="single-featured"
+              class="drill-2"
             />
-          </div>
-          <div class="single-featured--container">
-            <img
-              src="images/logos/Milwaukee_Logo.png"
-              alt=""
-              class="single-featured"
-            />
-          </div>
-          <div class="single-featured--container">
-            <img
-              src="images/logos/Makita_logo.png"
-              alt=""
-              class="single-featured"
-            />
-          </div>
-  
-          <div class="single-featured--container">
-            <img
-              src="images/logos/hitachi-logo.png"
-              alt=""
-              class="single-featured"
-            />
-          </div>
-  
-          <!-- two  "copy of the above imgaes" -->
-  
-          <div class="single-featured--container">
-            <img
-              src="images/logos/DeWalt_logo.png"
-              alt=""
-              class="single-featured"
-            />
-          </div>
-          <div class="single-featured--container">
-            <img
-              src="images/logos/ryobi-logo-png-transparent.png"
-              alt=""
-              class="single-featured"
-            />
-          </div>
-          <div class="single-featured--container">
-            <img
-              src="images/logos/Milwaukee_Logo.png"
-              alt=""
-              class="single-featured"
-            />
-          </div>
-          <div class="single-featured--container">
-            <img
-              src="images/logos/Makita_logo.png"
-              alt=""
-              class="single-featured"
-            />
-          </div>
-  
-          <div class="single-featured--container">
-            <img
-              src="images/logos/hitachi-logo.png"
-              alt=""
-              class="single-featured"
-            />
-          </div>
-        </section>
-        
-      </header>
-
-      <!--  ============ about us SECTION ============-->
-      <section  class="about-section">
-        <p class="section-start--s-title">About Us</p>
-        <h2 class="section-head--title">Our Mission</h2>
-        <div class="about-grid">
-         
-         <div class="about-text-1"> 
-          <p >
-            Providing <span> Original used Power tools,</span> 
-            <br> And make them more accessible
-          </p>
-         </div>
-
-          <div class="color-box-1"></div>
-
-          <div class="about-text-2">
-          <p >
-            if these Tools are <span>build to last forever,</span> <br>why not buying them used? 
-          </p>
-          </div>
-          
-          <div class="color-box-2"></div>
-        </div>
-
-        
-      </section>
-
-      <!--  ============ features SECTION ============-->
-      <main class="featurs">
-        <p class="section-start--s-title">Why us?</p>
-        <h2 class="featurs-title section-head--title">
-          here is <span>3</span> reasons on why buying form us
-        </h2>
-        <div class="featurs-grid--container">
-          <!--------------- feature 01 --------------->
-          <div class="feature-info">
-            <p class="feature-num">01</p>
-            <h2 class="feature-title">Lorem ipsum dolor sit amet.</h2>
-            <p class="feature-text">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil
-              quos eligendi, laboriosam nemo autem suscipit.
-            </p>
-          </div>
-          <div class="feature-img">
-            <img
-              src="images/featurse/benjamin-lehman-EJU7A__krX0-unsplash (1).jpg"
-              alt="power tool picture"
-            />
-          </div>
-          <!--------------- feature 02 --------------->
-          <div class="feature-info">
-            <p class="feature-num">02</p>
-            <h2 class="feature-title">Lorem ipsum dolor sit amet.</h2>
-            <p class="feature-text">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil
-              quos eligendi, laboriosam nemo autem suscipit.
-            </p>
-          </div>
-          <div class="feature-img">
-            <img
-              src="images/featurse/benjamin-lehman-EJU7A__krX0-unsplash (1).jpg"
-              alt="power tool picture"
-            />
-          </div>
-          <!--------------- feature 03 --------------->
-          <div class="feature-info">
-            <p class="feature-num">03</p>
-            <h2 class="feature-title">Lorem ipsum dolor sit amet.</h2>
-            <p class="feature-text">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil
-              quos eligendi, laboriosam nemo autem suscipit.
-            </p>
-          </div>
-          <div class="feature-img">
-            <img
-              src="images/featurse/benjamin-lehman-EJU7A__krX0-unsplash (1).jpg"
-              alt="power tool picture"
-            />
-          </div>
-        </div>
-      </main>
-
-      <!--  ============ reviews SECTION ============-->
-      <section class="reviews">
-        <!-- section intro  -->
-        <p class="section-start--s-title">Reviews</p>
-        <h2 class="section-head--title">What our customers say about us</h2>
-        
-        <!-- reviews boxes container -->
-        <div class="reviews-container">
-
-          <!-- review --1-- -->
-          <div class="single-review-container">
-          <!-- quotation marks -->
-          <svg class="quotation_icon">
-             <use href="images/icons.svg#icon-quote"></use>
-          </svg>
-          
-          <!-- stars ratting -->
-         <div class="stars-container">
-          <!-- first 4 fill stars -->
-         <svg class="star">
-           <use href="images/icons.svg#icon-star-fill"></use>
-         </svg>
-         <svg class="star">
-           <use href="images/icons.svg#icon-star-fill"></use>
-         </svg>
-         <svg class="star">
-           <use href="images/icons.svg#icon-star-fill"></use>
-         </svg>
-         <svg class="star">
-           <use href="images/icons.svg#icon-star-fill"></use>
-         </svg>
-         <!-- last helf-fill stars -->
-          <svg class="star">
-           <use href="images/icons.svg#icon-star-half"></use>
-         </svg>
-         </div>
-          
-         <!-- review text -->
-         <p class="single-review--text">
-         " Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis harum natus quis illo dolorum modi "
-         </p>
-         <p class="single-review--name">Amer Ali - BAGHDAD</p>
-    </div>
-
-
-          <!-- review --2-- -->
-          <article class="single-review-container">
-          <!-- quotation marks -->
-          <svg class="quotation_icon">
-             <use href="images/icons.svg#icon-quote"></use>
-          </svg>
-          
-          <!-- stars ratting -->
-         <div class="stars-container">
-          
-          <!-- first 4 fill stars -->
-         <svg class="star">
-           <use href="images/icons.svg#icon-star-fill"></use>
-         </svg>
-         <svg class="star">
-           <use href="images/icons.svg#icon-star-fill"></use>
-         </svg>
-         <svg class="star">
-           <use href="images/icons.svg#icon-star-fill"></use>
-         </svg>
-         <svg class="star">
-           <use href="images/icons.svg#icon-star-fill"></use>
-         </svg>
-         <!-- last helf-fill stars -->
-          <svg class="star">
-           <use href="images/icons.svg#icon-star-fill"></use>
-         </svg>
-         </div>
-          
-        <!-- review text -->
-        <p class="single-review--text">
-        " Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis harum natus quis illo dolorum modi "
+          </span>
+          for less than half the price!
+        </h1>
+        <p class="hero-sub-text">
+          grow your workshop without breaking the bank! <br />
+          those tools are build to last forever, so why not buying them used?
         </p>
-        <p class="single-review--name">Amer Ali - BAGHDAD</p>
+        <a href="#" class="hero-btn btn">Shop now</a>
+      </div>
+      <div class="hero-section--right map-container">
+        <img src="" alt="" />
+      </div>
 
-    </article>
-          <!-- review --3-- -->
-          <article class="single-review-container">
+      <!--------------- featured in SECTION --------------->
+      <section class="featured-in-section">
+        <!-- one -->
+        <div class="single-featured--container">
+          <img
+            src="images/logos/DeWalt_logo.png"
+            alt=""
+            class="single-featured"
+          />
+        </div>
+        <div class="single-featured--container">
+          <img
+            src="images/logos/ryobi-logo-png-transparent.png"
+            alt=""
+            class="single-featured"
+          />
+        </div>
+        <div class="single-featured--container">
+          <img
+            src="images/logos/Milwaukee_Logo.png"
+            alt=""
+            class="single-featured"
+          />
+        </div>
+        <div class="single-featured--container">
+          <img
+            src="images/logos/Makita_logo.png"
+            alt=""
+            class="single-featured"
+          />
+        </div>
+
+        <div class="single-featured--container">
+          <img
+            src="images/logos/hitachi-logo.png"
+            alt=""
+            class="single-featured"
+          />
+        </div>
+
+        <!-- two  "copy of the above imgaes" -->
+
+        <div class="single-featured--container">
+          <img
+            src="images/logos/DeWalt_logo.png"
+            alt=""
+            class="single-featured"
+          />
+        </div>
+        <div class="single-featured--container">
+          <img
+            src="images/logos/ryobi-logo-png-transparent.png"
+            alt=""
+            class="single-featured"
+          />
+        </div>
+        <div class="single-featured--container">
+          <img
+            src="images/logos/Milwaukee_Logo.png"
+            alt=""
+            class="single-featured"
+          />
+        </div>
+        <div class="single-featured--container">
+          <img
+            src="images/logos/Makita_logo.png"
+            alt=""
+            class="single-featured"
+          />
+        </div>
+
+        <div class="single-featured--container">
+          <img
+            src="images/logos/hitachi-logo.png"
+            alt=""
+            class="single-featured"
+          />
+        </div>
+      </section>
+    </header>
+
+    <!--  ============ about us SECTION ============-->
+    <section class="about-section container">
+      <p class="section-start--s-title">About Us</p>
+      <h2 class="section-head--title title-margin">Our Mission</h2>
+      <div class="about-grid">
+        <div class="about-text-1">
+          <p>
+            Providing <span> Original used Power tools,</span> <br />
+            And make them more accessible
+          </p>
+        </div>
+
+        <div class="color-box-1"></div>
+
+        <div class="about-text-2">
+          <p>
+            if these Tools are <span>build to last forever,</span> <br />why not
+            buying them used?
+          </p>
+        </div>
+
+        <div class="color-box-2"></div>
+      </div>
+    </section>
+
+    <!--  ============ features SECTION ============-->
+    <main class="featurs container">
+      <p class="section-start--s-title">Why us?</p>
+      <h2 class="featurs-title section-head--title title-margin">
+        here is <span>3</span> reasons on why buying form us
+      </h2>
+      <div class="featurs-grid--container">
+        <!--------------- feature 01 --------------->
+        <div class="feature-info">
+          <p class="feature-num">01</p>
+          <h2 class="feature-title">Lorem ipsum dolor sit amet.</h2>
+          <p class="feature-text">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil quos
+            eligendi, laboriosam nemo autem suscipit.
+          </p>
+        </div>
+        <div class="feature-img">
+          <img
+            src="images/featurse/benjamin-lehman-EJU7A__krX0-unsplash (1).jpg"
+            alt="power tool picture"
+          />
+        </div>
+        <!--------------- feature 02 --------------->
+        <div class="feature-info">
+          <p class="feature-num">02</p>
+          <h2 class="feature-title">Lorem ipsum dolor sit amet.</h2>
+          <p class="feature-text">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil quos
+            eligendi, laboriosam nemo autem suscipit.
+          </p>
+        </div>
+        <div class="feature-img">
+          <img
+            src="images/featurse/benjamin-lehman-EJU7A__krX0-unsplash (1).jpg"
+            alt="power tool picture"
+          />
+        </div>
+        <!--------------- feature 03 --------------->
+        <div class="feature-info">
+          <p class="feature-num">03</p>
+          <h2 class="feature-title">Lorem ipsum dolor sit amet.</h2>
+          <p class="feature-text">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil quos
+            eligendi, laboriosam nemo autem suscipit.
+          </p>
+        </div>
+        <div class="feature-img">
+          <img
+            src="images/featurse/benjamin-lehman-EJU7A__krX0-unsplash (1).jpg"
+            alt="power tool picture"
+          />
+        </div>
+      </div>
+    </main>
+
+    <!--  ============ reviews SECTION ============-->
+    <section class="reviews container">
+      <!-- section intro  -->
+      <p class="section-start--s-title">Reviews</p>
+      <h2 class="section-head--title title-margin">
+        What our customers say about us
+      </h2>
+
+      <!-- reviews boxes container -->
+      <div class="reviews-container">
+        <!-- review --1-- -->
+        <div class="single-review-container">
           <!-- quotation marks -->
           <svg class="quotation_icon">
-             <use href="images/icons.svg#icon-quote"></use>
+            <use href="images/icons.svg#icon-quote"></use>
           </svg>
-          
+
           <!-- stars ratting -->
-         <div class="stars-container">
+          <div class="stars-container">
+            <!-- first 4 fill stars -->
+            <svg class="star">
+              <use href="images/icons.svg#icon-star-fill"></use>
+            </svg>
+            <svg class="star">
+              <use href="images/icons.svg#icon-star-fill"></use>
+            </svg>
+            <svg class="star">
+              <use href="images/icons.svg#icon-star-fill"></use>
+            </svg>
+            <svg class="star">
+              <use href="images/icons.svg#icon-star-fill"></use>
+            </svg>
+            <!-- last helf-fill stars -->
+            <svg class="star">
+              <use href="images/icons.svg#icon-star-half"></use>
+            </svg>
+          </div>
 
-          <!-- first 4 fill stars -->
-         <svg class="star">
-           <use href="images/icons.svg#icon-star-fill"></use>
-         </svg>
-         <svg class="star">
-           <use href="images/icons.svg#icon-star-fill"></use>
-         </svg>
-         <svg class="star">
-           <use href="images/icons.svg#icon-star-fill"></use>
-         </svg>
-         <svg class="star">
-           <use href="images/icons.svg#icon-star-fill"></use>
-         </svg>
-         <!-- last helf-fill stars -->
-          <svg class="star">
-           <use href="images/icons.svg#icon-star-half"></use>
-         </svg>
-         </div>
-          
-         <!-- review text -->
-         <p class="single-review--text">
-         " Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis harum natus quis illo dolorum modi "
-         </p>
-         <p class="single-review--name">Amer Ali - BAGHDAD</p>
-         
-      </article>
-        
-        
-    <!-- reviews buttons -->
-    <button class="reviews-btns reviews-chevron--right">
-     <svg class="">
-      <use href="images/icons.svg#icon-chevron-right" ></use>
-     </svg>
-    </button>
+          <!-- review text -->
+          <p class="single-review--text">
+            " Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis
+            harum natus quis illo dolorum modi "
+          </p>
+          <p class="single-review--name">Amer Ali - BAGHDAD</p>
+        </div>
 
-    <button class="reviews-btns  reviews-chevron--left">
-     <svg class="">
-      <use href="images/icons.svg#icon-chevron-left" ></use>
-     </svg>
-    </button>
-  </div>
+        <!-- review --2-- -->
+        <article class="single-review-container">
+          <!-- quotation marks -->
+          <svg class="quotation_icon">
+            <use href="images/icons.svg#icon-quote"></use>
+          </svg>
 
+          <!-- stars ratting -->
+          <div class="stars-container">
+            <!-- first 4 fill stars -->
+            <svg class="star">
+              <use href="images/icons.svg#icon-star-fill"></use>
+            </svg>
+            <svg class="star">
+              <use href="images/icons.svg#icon-star-fill"></use>
+            </svg>
+            <svg class="star">
+              <use href="images/icons.svg#icon-star-fill"></use>
+            </svg>
+            <svg class="star">
+              <use href="images/icons.svg#icon-star-fill"></use>
+            </svg>
+            <!-- last helf-fill stars -->
+            <svg class="star">
+              <use href="images/icons.svg#icon-star-fill"></use>
+            </svg>
+          </div>
 
-  <!--  ============ packages SECTION  ============-->
-    <section class="packages-section">
+          <!-- review text -->
+          <p class="single-review--text">
+            " Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis
+            harum natus quis illo dolorum modi "
+          </p>
+          <p class="single-review--name">Amer Ali - BAGHDAD</p>
+        </article>
+        <!-- review --3-- -->
+        <article class="single-review-container">
+          <!-- quotation marks -->
+          <svg class="quotation_icon">
+            <use href="images/icons.svg#icon-quote"></use>
+          </svg>
+
+          <!-- stars ratting -->
+          <div class="stars-container">
+            <!-- first 4 fill stars -->
+            <svg class="star">
+              <use href="images/icons.svg#icon-star-fill"></use>
+            </svg>
+            <svg class="star">
+              <use href="images/icons.svg#icon-star-fill"></use>
+            </svg>
+            <svg class="star">
+              <use href="images/icons.svg#icon-star-fill"></use>
+            </svg>
+            <svg class="star">
+              <use href="images/icons.svg#icon-star-fill"></use>
+            </svg>
+            <!-- last helf-fill stars -->
+            <svg class="star">
+              <use href="images/icons.svg#icon-star-half"></use>
+            </svg>
+          </div>
+
+          <!-- review text -->
+          <p class="single-review--text">
+            " Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis
+            harum natus quis illo dolorum modi "
+          </p>
+          <p class="single-review--name">Amer Ali - BAGHDAD</p>
+        </article>
+
+        <!-- reviews buttons -->
+        <button class="reviews-btns reviews-chevron--right">
+          <svg class="">
+            <use href="images/icons.svg#icon-chevron-right"></use>
+          </svg>
+        </button>
+
+        <button class="reviews-btns reviews-chevron--left">
+          <svg class="">
+            <use href="images/icons.svg#icon-chevron-left"></use>
+          </svg>
+        </button>
+      </div>
+    </section>
+
+    <!--  ============ packages SECTION  ============-->
+    <section class="packages-section container">
       <p class="section-start--s-title">packages</p>
-      <h2 class="section-head--title">Our best tools are now grouped ! <br> to fit your needs</h2>
+      <h2 class="section-head--title title-margin">
+        Our best tools are now grouped ! <br />
+        to fit your needs
+      </h2>
 
       <div class="packages-container">
-
         <!-- package --1--  -->
         <article class="single-package-container">
-        <div class="package-img-container">
-          <h2 class="package-heading">WoodWorking <br> Package</h2>
-          <h2 class="package-price">199<span>$</span></h2>
-        </div>
-        
-        <ul class="package-list">
-         <li> <svg> <use href="images/icons.svg#icon-check-fill" ></use> </svg> Table Saw</li>
-         <li> <svg> <use href="images/icons.svg#icon-check-fill" ></use> </svg> Power Drill</li>
-         <li> <svg> <use href="images/icons.svg#icon-check-fill" ></use> </svg> Impact Driver</li>
-         <li> <svg> <use href="images/icons.svg#icon-check-fill" ></use> </svg> 5 Clamps</li>
-         <li> <svg> <use href="images/icons.svg#icon-check-fill" ></use> </svg> Box of hand Tools</li>
-         <li> <svg> <use href="images/icons.svg#icon-check-fill" ></use> </svg> Eye and Ear Safety</li>
-        </ul>
-      
-        <button class="btn package-btn">Buy</button>
-        <a href="#" class="package-link"> <span>More Info</span>  <svg> <use href="images/icons.svg#icon-arrow-right" ></use> </svg> </a>
+          <div class="package-img-container">
+            <h2 class="package-heading">
+              WoodWorking <br />
+              Package
+            </h2>
+            <h2 class="package-price">199<span>$</span></h2>
+          </div>
+
+          <ul class="package-list">
+            <li>
+              <svg><use href="images/icons.svg#icon-check-fill"></use></svg>
+              Table Saw
+            </li>
+            <li>
+              <svg><use href="images/icons.svg#icon-check-fill"></use></svg>
+              Power Drill
+            </li>
+            <li>
+              <svg><use href="images/icons.svg#icon-check-fill"></use></svg>
+              Impact Driver
+            </li>
+            <li>
+              <svg><use href="images/icons.svg#icon-check-fill"></use></svg> 5
+              Clamps
+            </li>
+            <li>
+              <svg><use href="images/icons.svg#icon-check-fill"></use></svg> Box
+              of hand Tools
+            </li>
+            <li>
+              <svg><use href="images/icons.svg#icon-check-fill"></use></svg> Eye
+              and Ear Safety
+            </li>
+          </ul>
+
+          <button class="btn package-btn">Buy</button>
+          <a href="#" class="package-link">
+            <span>More Info</span>
+            <svg><use href="images/icons.svg#icon-arrow-right"></use></svg>
+          </a>
         </article>
 
         <!-- package --2--  -->
         <article class="single-package-container">
+          <div class="package-img-container">
+            <h2 class="package-heading">MetalWorking Package</h2>
+            <h2 class="package-price">249<span>$</span></h2>
+          </div>
 
-        <div class="package-img-container ">
-          <h2 class="package-heading">MetalWorking Package</h2>
-          <h2 class="package-price">249<span>$</span></h2>
-        </div>
-        
-        <ul class="package-list">
-         <li> <svg> <use href="images/icons.svg#icon-check-fill" ></use> </svg> Welder</li>
-         <li> <svg> <use href="images/icons.svg#icon-check-fill" ></use> </svg> Drill Press</li>
-         <li> <svg> <use href="images/icons.svg#icon-check-fill" ></use> </svg> Bandsaw</li>
-         <li> <svg> <use href="images/icons.svg#icon-check-fill" ></use> </svg> Bench Grinder</li>
-         <li> <svg> <use href="images/icons.svg#icon-check-fill" ></use> </svg> Box of hand Tools</li>
-         <li> <svg> <use href="images/icons.svg#icon-check-fill" ></use> </svg> Eye and Ear Safety</li>
-        </ul>
-      
-        <button class="btn package-btn">Buy</button>
-        <a href="#" class="package-link"> <span>More Info</span>  <svg> <use href="images/icons.svg#icon-arrow-right" ></use> </svg> </a>
+          <ul class="package-list">
+            <li>
+              <svg><use href="images/icons.svg#icon-check-fill"></use></svg>
+              Welder
+            </li>
+            <li>
+              <svg><use href="images/icons.svg#icon-check-fill"></use></svg>
+              Drill Press
+            </li>
+            <li>
+              <svg><use href="images/icons.svg#icon-check-fill"></use></svg>
+              Bandsaw
+            </li>
+            <li>
+              <svg><use href="images/icons.svg#icon-check-fill"></use></svg>
+              Bench Grinder
+            </li>
+            <li>
+              <svg><use href="images/icons.svg#icon-check-fill"></use></svg> Box
+              of hand Tools
+            </li>
+            <li>
+              <svg><use href="images/icons.svg#icon-check-fill"></use></svg> Eye
+              and Ear Safety
+            </li>
+          </ul>
+
+          <button class="btn package-btn">Buy</button>
+          <a href="#" class="package-link">
+            <span>More Info</span>
+            <svg><use href="images/icons.svg#icon-arrow-right"></use></svg>
+          </a>
         </article>
 
         <!-- package --3--  -->
         <article class="single-package-container best-package">
-        <div class="package-img-container">
-          <h2 class="package-heading"> Home WorkShop <br> package</h2>
-          <h2 class="package-price">99<span>$</span></h2>
-        </div>
-        
-        <ul class="package-list">
-         <li> <svg> <use href="images/icons.svg#icon-check-fill" ></use> </svg> Power Drill</li>
-         <li> <svg> <use href="images/icons.svg#icon-check-fill" ></use> </svg> Power Saw</li>
-         <li> <svg> <use href="images/icons.svg#icon-check-fill" ></use> </svg> Impact Driver</li>
-         <li> <svg> <use href="images/icons.svg#icon-check-fill" ></use> </svg> Blower</li>
-         <li> <svg> <use href="images/icons.svg#icon-check-fill" ></use> </svg> Box of hand Tools</li>
-         <li> <svg> <use href="images/icons.svg#icon-check-fill" ></use> </svg> Eye and Ear Safety</li>
-        </ul>
-      
-        <button class="btn package-btn">Buy</button>
-        <a href="#" class="package-link"> <span>More Info</span>  <svg> <use href="images/icons.svg#icon-arrow-right" ></use> </svg> </a>
+          <div class="package-img-container">
+            <h2 class="package-heading">
+              Home WorkShop <br />
+              package
+            </h2>
+            <h2 class="package-price">99<span>$</span></h2>
+          </div>
+
+          <ul class="package-list">
+            <li>
+              <svg><use href="images/icons.svg#icon-check-fill"></use></svg>
+              Power Drill
+            </li>
+            <li>
+              <svg><use href="images/icons.svg#icon-check-fill"></use></svg>
+              Power Saw
+            </li>
+            <li>
+              <svg><use href="images/icons.svg#icon-check-fill"></use></svg>
+              Impact Driver
+            </li>
+            <li>
+              <svg><use href="images/icons.svg#icon-check-fill"></use></svg>
+              Blower
+            </li>
+            <li>
+              <svg><use href="images/icons.svg#icon-check-fill"></use></svg> Box
+              of hand Tools
+            </li>
+            <li>
+              <svg><use href="images/icons.svg#icon-check-fill"></use></svg> Eye
+              and Ear Safety
+            </li>
+          </ul>
+
+          <button class="btn package-btn">Buy</button>
+          <a href="#" class="package-link">
+            <span>More Info</span>
+            <svg><use href="images/icons.svg#icon-arrow-right"></use></svg>
+          </a>
         </article>
       </div>
-    </section>  
-   
-          <!--  ============ contact SECTION  ============-->
-    <section class="contact-section">
-    <!-- first flex child -->
-    <div>
-      <p class="section-start--s-title">contact</p>
-      <h2 class="section-head--title">Visit Us</h2>
+    </section>
 
-    <div class=" map-container">
-      <img src="" alt="" />
-    </div> 
-    </div>
+    <!--  ============ contact SECTION  ============-->
+    <section class="contact-section container">
+      <!-- first flex child -->
+      <div>
+        <p class="section-start--s-title">contact</p>
+        <h2 class="section-head--title title-margin">Visit Us</h2>
 
-  <!-- second flex child -->
-    <div>
-     <h2 class="section-head--title">Send a Message</h2>
-    <div class="input-field">
-      <div class="single-input-container" >
-        <label for="full-name">Full Name</label>
-        <input id="full-name" type="text" placeholder="Ali Amir">
+        <div class="map-container">
+          <img src="" alt="" />
+        </div>
       </div>
-    <div class="single-input-container" >
-      <label for="email">Eamil</label>
-      <input id="email" type="text" placeholder="Me@example.com">
-    </div>
-    <div class="single-input-container" >
-      <label for="message">Message</label>
-      <textarea class="textarea" placeholder="Hello, I want to ask you about .." name="#" id="message"></textarea>
 
-      
-    </div>
-    <button type="submit" class="btn send-btn">Send</button>
-    
-  </div>
-  </div>
-</section>
- 
-      <!--  ============ FOOTER  ============-->   
-    <footer class="footer-section">
-
-      <div class="logo-col">
-        <a href="#" ><h1 class="logo">Tooly</h1></a>
-         <p class="text">
-            grow your workshop <br> without breaking the bank!
-          </p>
-          <div class="social-media-container">
-
-            <svg class="icon-media">
-              <use href="images/icons.svg#icon-facebook"></use>
-            </svg>
-
-            <svg class="icon-media">
-              <use href="images/icons.svg#icon-instagram"></use>
-            </svg>
-
-            <svg class="icon-media">
-              <use href="images/icons.svg#icon-tiktok"></use>
-            </svg>
-
-            <svg class="icon-media">
-              <use href="images/icons.svg#icon-youtube"></use>
-            </svg>
-
+      <!-- second flex child -->
+      <div>
+        <h2 class="section-head--title title-margin">Send a Message</h2>
+        <div class="input-field">
+          <div class="single-input-container">
+            <label for="full-name">Full Name</label>
+            <input id="full-name" type="text" placeholder="Ali Amir" />
           </div>
+          <div class="single-input-container">
+            <label for="email">Eamil</label>
+            <input id="email" type="text" placeholder="Me@example.com" />
+          </div>
+          <div class="single-input-container">
+            <label for="message">Message</label>
+            <textarea
+              class="textarea"
+              placeholder="Hello, I want to ask you about .."
+              name="#"
+              id="message"
+            ></textarea>
+          </div>
+          <button type="submit" class="btn send-btn">Send</button>
+        </div>
+      </div>
+    </section>
+
+    <!--  ============ FOOTER  ============-->
+    <footer class="footer-section container">
+      <div class="logo-col">
+        <a href="#"><h1 class="logo">Tooly</h1></a>
+        <p class="text">
+          grow your workshop <br />
+          without breaking the bank!
+        </p>
+        <div class="social-media-container">
+          <svg class="icon-media">
+            <use href="images/icons.svg#icon-facebook"></use>
+          </svg>
+
+          <svg class="icon-media">
+            <use href="images/icons.svg#icon-instagram"></use>
+          </svg>
+
+          <svg class="icon-media">
+            <use href="images/icons.svg#icon-tiktok"></use>
+          </svg>
+
+          <svg class="icon-media">
+            <use href="images/icons.svg#icon-youtube"></use>
+          </svg>
+        </div>
       </div>
 
       <div class="contact-col">
-      <p class="footer-col-heading">Contact us</p>
-      <ul>
-        <li>
-          <svg>
+        <p class="footer-col-heading">Contact us</p>
+        <ul>
+          <li>
+            <svg>
               <use href="images/icons.svg#icon-envelope"></use>
             </svg>
 
-          tooly@gmail.com</li>
-        <li>
-          <svg>
+            tooly@gmail.com
+          </li>
+          <li>
+            <svg>
               <use href="images/icons.svg#icon-telephone"></use>
             </svg>
-        
-          +96477********</li>
-        <li>
-          <svg>
+
+            +96477********
+          </li>
+          <li>
+            <svg>
               <use href="images/icons.svg#icon-telephone"></use>
             </svg>
-        
-          +96477********</li>
-        
-      </ul>
+
+            +96477********
+          </li>
+        </ul>
       </div>
-      
+
       <div>
-      <p class="footer-col-heading">Company</p>
-      <ul>
-        <li><a href="#"></a>About Tooly</li>
-        <li><a href="#"></a>Careers</li>
-        <li><a href="#"></a>Apply for a Job</li>
-      </ul>
+        <p class="footer-col-heading">Company</p>
+        <ul>
+          <li><a href="#"></a>About Tooly</li>
+          <li><a href="#"></a>Careers</li>
+          <li><a href="#"></a>Apply for a Job</li>
+        </ul>
       </div>
-      
+
       <div>
         <p class="footer-col-heading">Resources</p>
         <ul>
-      <li><a href="#"></a>PowerTools Reviews</li>
-      <li><a href="#"></a>Privacy & terms</li>
-      <li><a href="#"></a>Help center</li>
-    </ul>
-  </div>
-  
-</footer>
-
-    </div>
-    <!-- end of mother-container -->
+          <li><a href="#"></a>PowerTools Reviews</li>
+          <li><a href="#"></a>Privacy & terms</li>
+          <li><a href="#"></a>Help center</li>
+        </ul>
+      </div>
+    </footer>
   </body>
 </html>

@@ -17,12 +17,7 @@
  ============================================
 ============================================ */
 
-/*
---- TYPOGRAPHY SYSTEM
-- Font sizes (px)
-10 / 12 / 14 / 16 / 18 / 20 / 24 / 30 / 36 / 44 / 52 / 62 / 74 / 86 / 98
-
-- Font weights
+/* - Font weights
 Default: 40
 Semi-bold: 600
 heading-Bold: 800
@@ -31,28 +26,75 @@ heading-Bold: 800
 Default: 1
 Small: 1.05
 Medium: 1.2
-Paragraph default: 1.6
-
-- Letter spacing
-0.5px
-0.75px
-
---- BORDER-RADIUS
-Default: 4px
-Medium: 11px
-
----  WHITESPACE
-- Spacing system (px)
-2 / 4 / 8 / 12 / 16 / 24 / 32 / 48 / 64 / 80 / 96 / 128
+Paragraph default: 1.6 
 */
 
-/* ============================================ 
-                  -global css
-============================================  */
-* {
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin */
+*{
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role='list'] {
+  list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+
+/* A elements that don't have a class get default styles
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+} */
+
+/* Make images easier to work with */
+img,
+picture,svg {
+  max-width: 100%;
+  display: block;
+}
+div > img {
+  border-radius: var(--border-r);
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+a{
+  text-decoration: none;
+}
+
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+   scroll-behavior: auto;
+  }
+  
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }
 html {
   /* convert to 10px for using rem*/
@@ -60,10 +102,25 @@ html {
   font-size: 62.5%;
   overflow-x: hidden;
 }
+
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+  
+  overflow-x: hidden;
+  }
+
+
+/* ============================================ 
+                  -global css
+============================================  */
+
+
 :root {
   /* base colors */
   --clr-base: #555;
-  --clr-base-lt: #999;
+  --clr-base-lt: #ffffff;
   --clr-base-dk: #333;
 
   /* primary colors */
@@ -72,28 +129,36 @@ html {
   --clr-primary-dk: #9e0303;
 
   /* secondary colors */
-  --clr-secondary-1: #94df01;
-  --clr-secondary-2: #018f8f;
+  --clr-secondary: #018f8f;
   --clr-secondary-lt: #80c7c77e;
 
-  /* base font size */
-  --fs-base: 1.7rem;
+  /*  font sizes */
+  --fs-base: var(--fs-400);
 
-  /* larger  heading font sizes */
-  --fs-giga: 6rem;
-  --fs-mega: 4rem;
-  --fs-kilo: 3.1rem;
-  /* heading font sizes */
-  --fs-h1: 2.8rem;
-  --fs-h2: 2.2rem;
-  --fs-h3: 1.8rem;
-  /* smaller font sizes */
-  --fs-milli: 1.4rem;
-  --fs-micro: 1rem;
+  --fs-300: 1.4rem;
+  --fs-400: 1.6rem;
+  --fs-500: 1.8rem;
+  --fs-600: 2.2rem;
+  --fs-650: 2.8rem;
+  --fs-700: 3.1rem;
+  --fs-800: 4rem ;
+  --fs-900: 6rem ;
 
-  /* 2 font family */
+  --fs-heading: var(--fs-700);
+  --fs-xs-title: var(--fs-300);
+  --fs-btn:var(--fs-600);
+
+  /* font family */
   --ff-base: "Rubik", sans-serif;
   --ff-bold: "Montserrat", sans-serif;
+  
+ /* font weight */
+  --base-bold:400
+  --Semi-bold: 500
+  --heading-Bold: 700
+
+  /* line height */
+  --line-height-:
 
   /* border raduse */
   --border-r: 0.2rem;
@@ -104,34 +169,26 @@ html {
 
   --shadow-lt: 0px 0px 13px -6px rgba(0, 0, 0, 0.51);
 }
-body {
+body{
+    
   font-family: var(--ff-base);
   font-size: var(--fs-base);
   color: var(--clr-base);
-  line-height: 1;
-  overflow-x: hidden;
+
+  display: flex;
+  flex-direction: column;
+  gap: 5rem;
 }
-img {
-  display: block;
-  max-width: 100%;
-}
-div > img {
-  border-radius: var(--border-r);
-}
-li {
-  list-style: none;
-}
-a {
-  text-decoration: none;
-  color: var(--clr-base);
-}
-.mother-container {
-  width: min(90%, 80rem);
-  margin: 1rem auto;
+.container {
+  --max-width: 1110px;
+  --padding :1.2rem;
+  
+  width: min(100% - (var(--padding) * 2) , var(--max-width));
+  margin-inline: auto;
 }
 .section-start--s-title {
   color: var(--clr-base-dk);
-  font-size: var(--fs-milli);
+  font-size: var(--fs-xs-title);
   font-weight: 500;
   text-transform: uppercase;
   letter-spacing: 1.5px;
@@ -140,14 +197,17 @@ a {
 .section-head--title {
   font-family: var(--ff-bold);
   color: var(--clr-primary);
-  font-size: var(--fs-kilo);
+  font-size: var(--fs-heading);
   letter-spacing: -1px;
-  margin-bottom: 11rem;
+}
+.title-margin {
+  margin-bottom: 8rem;
 }
 .btn {
   color: white;
   display: inline-block;
   font-family: var(--ff-bold);
+  font-size: var(--fs-btn);
   text-transform: uppercase;
   letter-spacing: 0.1em;
   background-color: var(--clr-primary);
@@ -172,7 +232,7 @@ a {
 }
 .logo {
   color: var(--clr-primary);
-  font-size: var(--fs-kilo);
+  font-size: var(--fs-700);
   font-family: var(--ff-bold);
 }
 .nav--bar svg {
@@ -198,7 +258,7 @@ a {
   gap: 3.8rem;
 }
 .hero--head-title {
-  font-size: var(--fs-mega);
+  font-size: var(--fs-800);
   font-family: var(--ff-bold);
   color: var(--clr-base-dk);
   line-height: 1.05;
@@ -209,18 +269,17 @@ a {
   margin-bottom: 2.4rem;
 }
 .hero-sub-text {
-  font-weight: 400;
   line-height: 1.2;
-  margin-bottom: 2.6rem;
+  margin-bottom: 6rem;
 }
 /* deleting some text
 .hero-sub-text span {
   color: var(--clr-primary);
-  font-size: var(--fs-milli);
+  font-size: var(--fs-300);
   font-weight: 500;
 } */
 .map-container {
-  background-color: var(--clr-secondary-2);
+  background-color: var(--clr-secondary);
   width: 100%;
   min-height: 30rem;
 
@@ -282,7 +341,7 @@ a {
 -------------------------------------------  */
 .about-section {
   margin-bottom: 12rem;
-  font-size: var(--fs-h2);
+  font-size: var(--fs-600);
   line-height: 1.2;
   /* text-transform: capitalize; */
   color: #ffffffef;
@@ -305,7 +364,7 @@ a {
 }
 
 .color-box-1 {
-  background-color: var(--clr-secondary-2);
+  background-color: var(--clr-secondary);
 }
 .color-box-2 {
   background-color: var(--clr-primary);
@@ -314,7 +373,7 @@ a {
 }
 
 .about-text-1 {
-  background-color: var(--clr-secondary-2);
+  background-color: var(--clr-secondary);
   grid-column: 1 / span 4;
 }
 .about-text-2 {
@@ -334,8 +393,8 @@ a {
 }
 
 .featurs-title span {
-  font-size: var(--fs-mega);
-  color: var(--clr-secondary-2);
+  font-size: var(--fs-800);
+  color: var(--clr-secondary);
 }
 .featurs-grid--container {
   display: grid;
@@ -352,8 +411,8 @@ a {
   display: block;
   font-family: var(--ff-base);
   font-weight: 600;
-  font-size: var(--fs-giga);
-  color: var(--clr-secondary-2);
+  font-size: var(--fs-900);
+  color: var(--clr-secondary);
   opacity: 35%;
   position: absolute;
   top: -1em;
@@ -361,7 +420,7 @@ a {
 }
 
 .feature-info .feature-title {
-  font-size: var(--fs-h2);
+  font-size: var(--fs-600);
   color: var(--clr-base-dk);
   margin-bottom: 1.8rem;
 }
@@ -418,8 +477,8 @@ a {
   margin-bottom: 3rem;
 }
 .stars-container svg {
-  width: var(--fs-h3);
-  height: var(--fs-h3);
+  width: var(--fs-500);
+  height: var(--fs-500);
 }
 .star {
   /* fill: #FDCC0D ; */
@@ -434,7 +493,7 @@ a {
 .single-review--text {
   color: var(--clr-base-dk);
   line-height: 1.4;
-  font-size: var(--fs-h3);
+  font-size: var(--fs-500);
   max-width: 18em;
   margin-inline: auto;
 
@@ -443,7 +502,7 @@ a {
 }
 .single-review--name {
   text-align: center;
-  font-size: var(--fs-milli);
+  font-size: var(--fs-300);
 }
 
 /* ------------------------------------------- 
@@ -502,7 +561,7 @@ a {
 
 .package-heading {
   color: var(--clr-primary-lt);
-  font-size: var(--fs-kilo);
+  font-size: var(--fs-heading);
   font-family: var(--ff-bold);
   letter-spacing: -0.5px;
 }
@@ -510,12 +569,12 @@ a {
 .package-price {
   color: var(--clr-primary-lt);
   font-family: var(--ff-base);
-  font-size: var(--fs-mega);
+  font-size: var(--fs-800);
   padding-left: 2rem;
   padding-bottom: 0.5rem;
 }
 .package-price span {
-  font-size: var(--fs-h2);
+  font-size: var(--fs-600);
 }
 
 .package-heading,
@@ -538,7 +597,7 @@ a {
   content: "best value";
   color: var(--clr-primary);
   font-weight: 600;
-  font-size: var(--fs-milli);
+  font-size: var(--fs-300);
   background-color: rgba(255, 255, 0, 1);
   text-transform: uppercase;
   letter-spacing: 1.3px;
@@ -551,7 +610,7 @@ a {
 }
 
 .package-list {
-  font-size: var(--fs-h2);
+  font-size: var(--fs-600);
   font-weight: 500;
   list-style: none;
 
@@ -599,15 +658,14 @@ a {
   display: block;
 }
 .single-input-container label {
-  font-size: var(--fs-h3);
+  font-size: var(--fs-500);
   font-weight: 500;
 
   margin-bottom: 0.3rem;
 }
 .single-input-container input,
 textarea {
-  font-family: var(--ff-base);
-  font-size: var(--fs-h3);
+  font-size: var(--fs-500);
   border: none;
   background-color: var(--clr-secondary-lt);
   padding: 0.3em;
@@ -627,7 +685,7 @@ textarea:focus {
 -------------------------------------------  */
 .footer-section {
   border-top: 0.2em solid var(--clr-primary);
-  font-size: var(--fs-h3);
+  font-size: var(--fs-500);
   padding: 4rem 0;
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -645,8 +703,8 @@ textarea:focus {
   margin-bottom: 3rem;
 }
 .footer-section svg {
-  width: var(--fs-h3);
-  height: var(--fs-h3);
+  width: var(--fs-500);
+  height: var(--fs-500);
   fill: var(--clr-base-dk);
 }
 .contact-col li {
@@ -660,8 +718,8 @@ textarea:focus {
   padding: 1rem 0;
 }
 .icon-media {
-  width: var(--fs-h1) !important;
-  height: var(--fs-h1) !important;
+  width: var(--fs-650) !important;
+  height: var(--fs-650) !important;
 }
 
 .logo-col {
@@ -674,8 +732,7 @@ textarea:focus {
       3.1- hero section btn (SHOP NOW)
 -------------------------------------------  */
 .hero-btn {
-  text-decoration: none;
-  font-size: var(--fs-h2);
+
 }
 
 /* ------------------------------------------- 
@@ -690,8 +747,8 @@ textarea:focus {
 .reviews-btns svg {
   fill: var(--clr-primary);
   stroke: var(--clr-primary);
-  height: var(--fs-mega);
-  width: var(--fs-mega);
+  height: var(--fs-800);
+  width: var(--fs-800);
 }
 .reviews-chevron--right {
   top: 50%;
@@ -708,14 +765,12 @@ textarea:focus {
       3.3- package section btns (buy + more info)
 -------------------------------------------  */
 .package-btn {
-  font-size: var(--fs-h2);
-  cursor: pointer;
   margin: 1.9rem;
 }
 .package-link:link,
 .package-link:visited {
   /* display: inline-block; */
-  font-size: var(--fs-h2);
+  font-size: var(--fs-btn);
   color: var(--clr-base);
   text-decoration: none;
 }
@@ -725,8 +780,8 @@ textarea:focus {
   gap: 0.2em;
 }
 .package-link svg {
-  width: var(--fs-h2);
-  height: var(--fs-h2);
+  width: var(--fs-600);
+  height: var(--fs-600);
   fill: var(--clr-base);
   stroke: var(--clr-base);
 }
@@ -736,7 +791,7 @@ textarea:focus {
 -------------------------------------------  */
 .send-btn {
   align-self: flex-start;
-  font-size: var(--fs-h3);
+  font-size: var(--fs-500);
 }
 /* ------------------------------------------- 
       3.1- hero section btn (SHOP NOW)
