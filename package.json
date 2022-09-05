@@ -1,0 +1,23 @@
+{
+  "dependencies": {
+    "parcel": "^2.7.0"
+  },
+  "name": "tooly",
+  "version": "1.0.0",
+  "devDependencies": {},
+  "scripts": {
+    "start": "parcel index.html",
+    "build": "parcel build index.html --dist-dir ./dist"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Abd1h/Tooly.git"
+  },
+  "author": "Abdlh",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Abd1h/Tooly/issues"
+  },
+  "homepage": "https://github.com/Abd1h/Tooly#readme",
+  "description": ""
+}

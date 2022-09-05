@@ -270,7 +270,7 @@ body {
   font-size: var(--fs-800);
   font-family: var(--ff-bold);
   color: var(--clr-base-dk);
-  line-height: 1.05;
+  line-height: 1.1;
   letter-spacing: -1.5px;
   min-width: 90%;
 
@@ -321,18 +321,18 @@ body {
   position: relative;
 }
 .drill-1 {
-  width: 7.2em;
+  width: 6.5em;
   position: absolute;
-  top: 0.85em;
-  left: -0.69em;
-}
-.drill-2 {
-  width: 7.1em;
-  position: absolute;
-  top: 0.85em;
-  left: 0.1em;
+  top: 0.95em;
+  left: 0em;
 
   transform: rotate(180deg);
+}
+.drill-2 {
+  width: 4.8em;
+  position: absolute;
+  top: 0.97em;
+  left: -2.09em;
 }
 
 /* ------------------------------------------- 
@@ -643,6 +643,7 @@ textarea {
   border: none;
   background-color: var(--clr-secondary-lt);
   padding: 0.3em;
+  width: 78%;
 }
 .single-input-container input:focus,
 textarea:focus {
@@ -747,10 +748,7 @@ textarea:focus {
 }
 .package-link:link,
 .package-link:visited {
-  /* display: inline-block; */
   font-size: var(--fs-btn);
-  color: var(--clr-base);
-  text-decoration: none;
 }
 .package-link {
   display: inline-flex;
