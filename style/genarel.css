@@ -272,7 +272,7 @@ body {
   color: var(--clr-base-dk);
   line-height: 1.1;
   letter-spacing: -1.5px;
-  min-width: 90%;
+  max-width: 34rem;
 
   /* max-width: 400px; */
   margin-bottom: 2.4rem;
@@ -283,11 +283,10 @@ body {
 }
 
 .map-container {
-  background-color: var(--clr-secondary);
   width: 100%;
-  min-height: 30rem;
 
   box-shadow: var(--shadow);
+  border-radius: var(--border-r);
 }
 
 /* ------------------------------------------- 
