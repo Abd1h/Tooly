@@ -123,7 +123,7 @@ body {
 
   /* primary colors */
   --clr-primary: #ee0202;
-  --clr-primary-lt: #fde6e6;
+  --clr-primary-lt: #fccccc;
   --clr-primary-dk: #9e0303;
 
   /* secondary colors */
@@ -226,6 +226,9 @@ body {
   letter-spacing: 0.1em;
   font-weight: var(--Semi-bold);
   padding: 0.5em 1.2em;
+
+  box-shadow: var(--shadow-lt);
+  transition: all 0.2s ease-in;
 }
 /* ============================================ 
                   2- sections work 
@@ -768,17 +771,28 @@ textarea:focus {
   align-self: flex-start;
   font-size: var(--fs-500);
 }
-/* ------------------------------------------- 
-      3.1- hero section btn (SHOP NOW)
--------------------------------------------  */
 
-@keyframes logos-left {
-  100% {
-    transform: translateX(-100%);
-  }
+/* ============================================ 
+                  2- animations
+                  5.1 havor
+============================================  */
+.btn:hover,
+.btn:active {
+  background-color: var(--clr-primary-lt);
+  color: var(--clr-primary);
 }
-@keyframes logos-right {
-  100% {
-    transform: translateX(100%);
+.package-link:hover svg,
+.package-link:active svg {
+  stroke: var(--clr-base-dk);
+  animation: package-link 600ms ease infinite;
+}
+
+@keyframes package-link {
+  form {
+    transform: translateX(0px);
+  }
+
+  to {
+    transform: translateX(6px);
   }
 }
