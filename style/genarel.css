@@ -130,22 +130,6 @@ body {
   --clr-secondary: #018f8f;
   --clr-secondary-lt: #80c7c77e;
 
-  /*  font sizes */
-
-  --fs-300: 1.4rem;
-  --fs-400: 1.6rem;
-  --fs-500: 1.8rem;
-  --fs-600: 2.2rem;
-  --fs-650: 2.8rem;
-  --fs-700: 3.1rem;
-  --fs-800: 4rem;
-  --fs-900: 6rem;
-
-  --fs-xs-title: var(--fs-300);
-  --fs-base: var(--fs-400);
-  --fs-btn: var(--fs-600);
-  --fs-heading: var(--fs-700);
-
   /* font family */
   --ff-base: "Rubik", sans-serif;
   --ff-bold: "Montserrat", sans-serif;
@@ -167,8 +151,40 @@ body {
   --shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
     rgba(0, 0, 0, 0.3) 0px 30px 60px -30px,
     rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
-
   --shadow-lt: 0px 0px 13px -6px rgba(0, 0, 0, 0.51);
+
+  /*  font sizes */
+
+  --fs-300: 1.4rem;
+  --fs-400: 1.6rem;
+  --fs-500: 1.8rem;
+  --fs-600: 2.2rem;
+  --fs-650: 2.8rem;
+  --fs-700: 3.1rem;
+  --fs-800: 4rem;
+  --fs-900: 6rem;
+
+  --fs-base: var(--fs-400);
+  --fs-hero-heading: var(--fs-800);
+  --fs-heading: var(--fs-700);
+  --fs-xs-title: var(--fs-300);
+  --fs-btn: var(--fs-600);
+}
+@media (min-width: 50em) {
+  :root {
+    --fs-base: var(--fs-500);
+    --fs-hero-heading: calc(var(--fs-800) + 1rem);
+    --fs-heading: calc(var(--fs-700) + 0.5rem);
+    --fs-xs-title: var(--fs-400);
+    --fs-btn: var(--fs-600);
+  }
+  .drill-1,
+  .drill-2 {
+    display: none;
+  }
+  body {
+    padding: 1.5rem;
+  }
 }
 body {
   font-family: var(--ff-base);
@@ -182,7 +198,7 @@ body {
 
 /* centring and padding */
 .container {
-  --max-width: 1110px;
+  --max-width: 1210px;
   --padding: 1.2rem;
 
   width: min(100% - (var(--padding) * 2), var(--max-width));
@@ -230,6 +246,19 @@ body {
   box-shadow: var(--shadow-lt);
   transition: all 0.2s ease-in;
 }
+
+.even-columns {
+  display: grid;
+  gap: 8rem;
+}
+
+@media (min-width: 50em) {
+  .even-columns {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5rem;
+  }
+}
 /* ============================================ 
                   2- sections work 
 ============================================  */
@@ -241,6 +270,8 @@ body {
   justify-content: space-between;
   align-items: center;
   height: 6vh;
+
+  padding-top: 1rem;
 }
 .logo {
   color: var(--clr-primary);
@@ -264,18 +295,14 @@ body {
 /* ------------------------------------------- 
                   2.2- hero section
 -------------------------------------------  */
-.hero-section {
-  display: flex;
-  flex-direction: column;
-  gap: 5rem;
-}
+
 .hero--head-title {
-  font-size: var(--fs-800);
+  font-size: var(--fs-hero-heading);
   font-family: var(--ff-bold);
   color: var(--clr-base-dk);
   line-height: 1.1;
   letter-spacing: -1.5px;
-  max-width: 34rem;
+  max-width: 11em;
 
   /* max-width: 400px; */
   margin-bottom: 2.4rem;
@@ -286,7 +313,9 @@ body {
 }
 
 .map-container {
-  width: 100%;
+  align-self: center;
+  justify-self: center;
+  max-width: min(100%, 30em);
 
   box-shadow: var(--shadow);
   border-radius: var(--border-r);
@@ -491,14 +520,33 @@ body {
 -------------------------------------------  */
 
 .packages-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 8rem;
+  display: grid;
+  justify-content: center;
+  gap: 12rem;
+}
+.packages-container > article {
+  justify-self: center;
+}
+@media (min-width: 45em) {
+  .packages-container {
+    grid-template-columns: 1fr 1fr;
+    gap: 8rem;
+  }
+  .single-package-container:nth-child(3) {
+    grid-column: 1/-1;
+  }
+}
+@media (min-width: 75em) {
+  .packages-container {
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 5rem;
+  }
+  .single-package-container:nth-child(3) {
+    grid-column: auto;
+  }
 }
 .single-package-container {
   max-width: 20em;
-
   border-radius: var(--border-r);
   box-shadow: var(--shadow-lt);
   overflow: hidden;
@@ -571,12 +619,12 @@ body {
 
 .best-package {
   box-shadow: var(--shadow);
-  transform: scale(1.06);
+  transform: scale(1.04);
 }
 .best-package:before {
   content: "best value";
   color: var(--clr-primary);
-  font-weight: 600;
+  font-weight: var(--Semi-bold);
   font-size: var(--fs-300);
   background-color: rgba(255, 255, 0, 1);
   text-transform: uppercase;
