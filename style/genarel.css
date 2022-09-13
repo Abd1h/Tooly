@@ -169,6 +169,8 @@ body {
   --fs-heading: var(--fs-700);
   --fs-xs-title: var(--fs-300);
   --fs-btn: var(--fs-600);
+
+  --screen-Max-Width: 1220px;
 }
 @media (min-width: 50em) {
   :root {
@@ -183,7 +185,7 @@ body {
     display: none;
   }
   body {
-    padding: 1.5rem;
+    padding-block: 1.5rem;
   }
 }
 body {
@@ -198,16 +200,15 @@ body {
 
 /* centring and padding */
 .container {
-  --max-width: 1210px;
   --padding: 1.2rem;
 
-  width: min(100% - (var(--padding) * 2), var(--max-width));
+  width: min(100% - (var(--padding) * 2), var(--screen-Max-Width));
   margin-inline: auto;
 }
 /* centring and padding for sections with different background color*/
 .container-background-color {
   padding-inline: 1.2rem;
-  width: min(100%, 1110px);
+  width: min(100%, var(--screen-Max-Width));
   margin-inline: auto;
 }
 .section-start--s-title {
@@ -255,7 +256,9 @@ body {
 @media (min-width: 50em) {
   .even-columns {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-auto-flow: column;
+    grid-auto-columns: 1fr;
+    /* grid-template-columns: 1fr 1fr; */
     gap: 5rem;
   }
 }
@@ -413,7 +416,6 @@ body {
 .featurs {
   background-color: var(--clr-secondary-lt);
 }
-
 .featurs-title span {
   /*  for number 3 in the section title */
   font-size: var(--fs-800);
@@ -421,35 +423,43 @@ body {
 }
 .featurs-grid--container {
   display: grid;
-  grid-template-columns: 1fr;
   grid-template-rows: repeat(6, auto);
+  justify-content: center;
+
   row-gap: 3.8rem;
 }
+
 .featurs-grid--container > :nth-child(even) {
   /* adding margin bigger than grid gap only after feature image */
   margin-bottom: 12rem;
+}
+
+@media (min-width: 50em) {
+  .featurs-grid--container {
+    grid-template-rows: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .featurs-grid--container > :nth-child(even) {
+    /* adding margin bigger than grid gap only after feature image */
+    margin-bottom: 3rem;
+  }
 }
 .featurs-grid--container > :last-child {
   /* adding smaller margin for the section ending */
   margin-bottom: 4rem;
 }
 
-.feature-info {
-  position: relative;
-}
 .feature-num {
   font-family: var(--ff-base);
-  font-weight: var(--Semi-bold);
-  font-size: var(--fs-900);
+  font-weight: var(--heading-Bold);
+  font-size: calc(var(--fs-900) + 1rem);
   color: var(--clr-secondary);
-  opacity: 35%;
-  position: absolute;
-  top: -1.3em;
-  left: -0.035em;
+  opacity: 30%;
+  margin-bottom: -2rem;
 }
 
 .feature-title {
-  font-size: var(--fs-600);
+  font-size: var(--fs-650);
   color: var(--clr-base-dk);
   margin-bottom: 1.8rem;
 }
@@ -661,10 +671,14 @@ body {
 /* ------------------------------------------- 
               4- contact
 -------------------------------------------  */
-.contact-section {
-  display: flex;
-  flex-direction: column;
-  gap: 5rem;
+.map-contact {
+  width: 100%;
+  height: 90%;
+  background: url("./../images/baghdad-map.jpg") no-repeat center center/cover;
+}
+.contact-section .even-columns {
+  /* grid-template-rows: 1fr 1fr; */
+  gap: 0;
 }
 .contact-section h2 {
   /* overwriting the value comming form "section-head--title" */
@@ -707,7 +721,7 @@ textarea:focus {
 }
 
 /* ------------------------------------------- 
-              2.3- footer section
+2.3- footer section
 -------------------------------------------  */
 .footer-section {
   background-color: var(--clr-base-dk);
@@ -720,7 +734,17 @@ textarea:focus {
   column-gap: 3rem;
   row-gap: 6rem;
 }
-
+.logo-col {
+  grid-row: 2;
+}
+@media (min-width: 50em) {
+  .footer-section {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  .logo-col {
+    grid-row: 1;
+  }
+}
 .footer-section svg {
   width: var(--fs-400);
   height: var(--fs-400);
@@ -752,9 +776,6 @@ textarea:focus {
   height: var(--fs-650) !important;
 }
 
-.logo-col {
-  grid-row: 2;
-}
 /* ============================================ 
                   4-buttons
 ============================================  */
