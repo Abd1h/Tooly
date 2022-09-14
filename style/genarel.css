@@ -315,14 +315,14 @@ body {
   margin-bottom: 5rem;
 }
 
-.map-container {
+/* .map-container {
   align-self: center;
   justify-self: center;
   max-width: min(100%, 30em);
 
   box-shadow: var(--shadow);
   border-radius: var(--border-r);
-}
+} */
 
 /* ------------------------------------------- 
               2.3- featured In
@@ -666,15 +666,18 @@ body {
   width: 1.1em;
   fill: var(--clr-base-dk);
 }
+.package-link:hover svg,
+.package-link:active svg {
+  stroke: var(--clr-base-dk);
+  animation: link-arrows-animation 600ms ease infinite;
+}
 
 /* ------------------------------------------- 
               4- contact
 -------------------------------------------  */
-/* .map-contact {
-  width: 100%;
-  height: 90%;
-  background: url("./../images/baghdad-map.jpg") no-repeat center center/cover;
-} */
+.map-container {
+  position: relative;
+}
 .contact-section .even-columns {
   /* grid-template-rows: 1fr 1fr; */
   gap: 0;
@@ -719,6 +722,41 @@ textarea:focus {
   min-height: 8rem;
 }
 
+/* map loaction pointers */
+.map-pin {
+  position: absolute;
+  color: var(--clr-base-lt);
+  font-family: var(--ff-bold);
+  font-size: var(--fs-600);
+}
+.map-pin a {
+  display: flex;
+  align-items: center;
+}
+.map-pin-1 {
+  top: 20%;
+  right: 16%;
+}
+.map-pin svg {
+  fill: var(--clr-primary);
+  display: inline;
+  width: calc(var(--fs-base) + 3rem);
+  height: calc(var(--fs-base) + 3rem);
+}
+.map-pin a svg:last-child {
+  width: calc(var(--fs-base) + 1rem);
+  height: calc(var(--fs-base) + 1rem);
+  stroke: var(--clr-primary);
+  align-self: flex-end;
+}
+.map-pin p {
+  display: inline;
+}
+.map-pin:hover svg:last-child,
+.map-pin:active svg:last-child {
+  stroke: var(--clr-primary);
+  animation: link-arrows-animation 600ms ease infinite;
+}
 /* ------------------------------------------- 
 2.3- footer section
 -------------------------------------------  */
@@ -862,20 +900,15 @@ textarea:focus {
 
 /* ============================================ 
                   2- animations
-                  5.1 havor
+                  
 ============================================  */
 .btn:hover,
 .btn:active {
   background-color: var(--clr-primary-lt);
   color: var(--clr-primary);
 }
-.package-link:hover svg,
-.package-link:active svg {
-  stroke: var(--clr-base-dk);
-  animation: package-link 600ms ease infinite;
-}
 
-@keyframes package-link {
+@keyframes link-arrows-animation {
   form {
     transform: translateX(0px);
   }
