@@ -568,7 +568,7 @@ body {
   }
 }
 .single-package-container {
-  max-width: 20em;
+  max-width: min(100%, 22em);
   border-radius: var(--border-r);
   box-shadow: var(--shadow-lt);
   overflow: hidden;
