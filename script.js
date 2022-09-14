@@ -39,3 +39,5 @@ var checkScrollSpeed = (function (settings) {
 window.onscroll = function () {
   console.log(checkScrollSpeed());
 };
+
+console.log("test");

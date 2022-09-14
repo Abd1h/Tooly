@@ -413,51 +413,45 @@ body {
 /* ------------------------------------------- 
            2.4- Features 01 02 03
 -------------------------------------------  */
-.featurs {
-  background-color: var(--clr-secondary-lt);
-}
+
 .featurs-title span {
   /*  for number 3 in the section title */
   font-size: var(--fs-800);
   color: var(--clr-secondary);
 }
+
 .featurs-grid--container {
   display: grid;
   grid-template-rows: repeat(6, auto);
-  justify-content: center;
-
-  row-gap: 3.8rem;
+  row-gap: 3.5rem;
 }
-
-.featurs-grid--container > :nth-child(even) {
-  /* adding margin bigger than grid gap only after feature image */
-  margin-bottom: 12rem;
+.feature-img {
+  /* adding more space after feature img*/
+  /* on mobile view */
+  margin-bottom: 6rem;
 }
-
+.featurs-grid--container > div {
+  justify-self: center;
+  align-self: center;
+}
 @media (min-width: 50em) {
   .featurs-grid--container {
     grid-template-rows: repeat(3, 1fr);
     grid-template-columns: repeat(2, 1fr);
+    row-gap: 8rem;
   }
-  .featurs-grid--container > :nth-child(even) {
-    /* adding margin bigger than grid gap only after feature image */
-    margin-bottom: 3rem;
+  .feature-img {
+    margin-bottom: 0rem;
   }
-}
-.featurs-grid--container > :last-child {
-  /* adding smaller margin for the section ending */
-  margin-bottom: 4rem;
 }
 
 .feature-num {
-  font-family: var(--ff-base);
   font-weight: var(--heading-Bold);
+  color: var(--clr-secondary-lt);
   font-size: calc(var(--fs-900) + 1rem);
-  color: var(--clr-secondary);
-  opacity: 30%;
-  margin-bottom: -2rem;
+  line-height: 0.8;
+  margin-inline: -0.033em;
 }
-
 .feature-title {
   font-size: var(--fs-650);
   color: var(--clr-base-dk);
@@ -486,8 +480,13 @@ body {
   border-radius: var(--border-r);
   padding: 4rem 3rem;
   position: relative;
-}
 
+  transition: all 0.5s ease-in-out;
+}
+.single-review-container {
+  /* coming for js */
+  transform: translateX(0);
+}
 .quotation_icon {
   width: 9rem;
   height: 9rem;
@@ -671,11 +670,11 @@ body {
 /* ------------------------------------------- 
               4- contact
 -------------------------------------------  */
-.map-contact {
+/* .map-contact {
   width: 100%;
   height: 90%;
   background: url("./../images/baghdad-map.jpg") no-repeat center center/cover;
-}
+} */
 .contact-section .even-columns {
   /* grid-template-rows: 1fr 1fr; */
   gap: 0;
@@ -797,8 +796,8 @@ textarea:focus {
 .reviews-btns svg {
   fill: var(--clr-primary);
   stroke: var(--clr-primary);
-  height: var(--fs-800);
-  width: var(--fs-800);
+  height: calc(var(--fs-base) + 2.4rem);
+  width: calc(var(--fs-base) + 2.4rem);
 }
 .reviews-chevron--right {
   top: 50%;
@@ -810,7 +809,27 @@ textarea:focus {
   left: 0;
   transform: translate(-15%, -50%);
 }
-
+/* ------- reviews dots -------  */
+.reviews-dots {
+  display: flex;
+  gap: 1.5rem;
+  position: absolute;
+  right: 50%;
+  top: 100%;
+  transform: translate(50%, 100%);
+}
+.dot {
+  cursor: pointer;
+  background-color: white;
+  border-radius: 50%;
+  border: 3px solid var(--clr-base);
+  height: var(--fs-base);
+  width: var(--fs-base);
+}
+.don-active {
+  border: 3px solid var(--clr-primary);
+  background-color: var(--clr-primary);
+}
 /* ------------------------------------------- 
       3.3- package section btns (buy + more info)
 -------------------------------------------  */
