@@ -43,7 +43,7 @@ Paragraph default: 1.6
 }
 
 /* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
-ul[role="list"],
+ul[role='list'],
 ul {
   list-style: none;
 }
@@ -136,8 +136,8 @@ body {
   --clr-secondary-lt: #80c7c77e;
 
   /* font family */
-  --ff-base: "Rubik", sans-serif;
-  --ff-bold: "Montserrat", sans-serif;
+  --ff-base: 'Rubik', sans-serif;
+  --ff-bold: 'Montserrat', sans-serif;
 
   /* font weight */
   --base-bold: 400;
@@ -542,28 +542,36 @@ body {
            2.4- reviews 
 -------------------------------------------  */
 /* s-title and head title style comes from globel secton */
-
+.reviews {
+  overflow-x: hidden;
+}
 .reviews-container {
-  display: flex;
-  gap: 3rem;
-
   position: relative;
-  margin-bottom: 11rem;
+
+  height: 26.5rem;
+  width: 100%;
+  margin-bottom: 4rem;
+}
+.single-review-container {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
 }
 
+.single-review-container:nth-child(3) {
+  transform: translateX(200%);
+}
 .single-review-container {
   min-width: 100%;
   background-color: var(--clr-secondary-lt);
   border-radius: var(--border-r);
   padding: 4rem 3rem;
-  position: relative;
 
   transition: all 0.5s ease-in-out;
 }
-.single-review-container {
-  /* coming for js */
-  transform: translateX(0);
-}
+
 .quotation_icon {
   width: 9rem;
   height: 9rem;
@@ -671,7 +679,7 @@ body {
       rgba(238, 2, 2, 0.4) 49%,
       rgba(238, 2, 2, 0.16) 100%
     ),
-    url("../images/packages/woodworking.jpg") no-repeat center / cover;
+    url('../images/packages/woodworking.jpg') no-repeat center / cover;
 
   border-top-left-radius: var(--border-r);
   border-top-right-radius: var(--border-r);
@@ -690,7 +698,7 @@ body {
       rgba(238, 2, 2, 0.4) 49%,
       rgba(238, 2, 2, 0.16) 100%
     ),
-    url("../images/packages/metal.jpg") no-repeat center center / cover;
+    url('../images/packages/metal.jpg') no-repeat center center / cover;
 }
 
 .single-package-container:nth-child(3) .package-img-container {
@@ -700,7 +708,7 @@ body {
       rgba(238, 2, 2, 0.4) 49%,
       rgba(238, 2, 2, 0.16) 100%
     ),
-    url("../images/packages/homeWorkShop.jpg") no-repeat center center / cover;
+    url('../images/packages/homeWorkShop.jpg') no-repeat center center / cover;
 }
 
 .best-package {
@@ -708,7 +716,7 @@ body {
   transform: scale(1.04);
 }
 .best-package:before {
-  content: "best value";
+  content: 'best value';
   color: var(--clr-primary);
   font-weight: var(--Semi-bold);
   font-size: var(--fs-300);
@@ -754,7 +762,7 @@ body {
 -------------------------------------------  */
 .map-container {
   position: relative;
-  background: url("./../images/baghdad-map.jpg") no-repeat center center / cover;
+  background: url('./../images/baghdad-map.jpg') no-repeat center center / cover;
   height: 90%;
   width: 100%;
   border-radius: var(--border-r);
@@ -962,7 +970,7 @@ textarea {
   height: var(--fs-base);
   width: var(--fs-base);
 }
-.don-active {
+.dot-active {
   border: 3px solid var(--clr-primary);
   background-color: var(--clr-primary);
 }
