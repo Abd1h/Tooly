@@ -175,6 +175,8 @@ body {
   --fs-btn: var(--fs-600);
 
   --screen-Max-Width: 1220px;
+
+  --sections-padding: 1.2rem;
 }
 @media (min-width: 50em) {
   :root {
@@ -183,10 +185,17 @@ body {
     --fs-heading: calc(var(--fs-700) + 0.5rem);
     --fs-xs-title: var(--fs-400);
     --fs-btn: var(--fs-600);
+
+    --sections-padding: 1.8rem;
   }
   .drill-1,
   .drill-2 {
     display: none;
+  }
+}
+@media (min-width: 77em) {
+  :root {
+    --sections-padding: 4rem;
   }
 }
 body {
@@ -201,24 +210,10 @@ body {
 
 /* centring and padding */
 .container {
-  --padding: 1.2rem;
-
-  width: min(100% - (var(--padding) * 2), var(--screen-Max-Width));
+  width: min(100% - (var(--sections-padding) * 2), var(--screen-Max-Width));
   margin-inline: auto;
 }
-/* centring and padding for sections with different background color*/
-.container-background-color {
-  padding-inline: 1.2rem;
-  width: 100%;
-  /* width: min(100%, var(--screen-Max-Width)); */
-  /* margin-inline: auto; */
-}
-@media (min-width: 80em) {
-  .container-background-color {
-    padding: 2rem 5rem;
-    width: 100%;
-  }
-}
+
 .section-start--s-title {
   color: var(--clr-base-dk);
   font-size: var(--fs-xs-title);
@@ -281,33 +276,38 @@ body {
 /* ------------------------------------------- 
                   2.1- nav
 -------------------------------------------  */
+/* pc first, only for nav */
 .nav--bar {
   display: flex;
   justify-content: space-between;
   align-items: center;
   height: 6vh;
-
-  margin-top: 2rem;
+  padding-inline: var(--sections-padding);
+  margin-top: 1rem;
 }
+
 .logo {
   color: var(--clr-primary);
   font-size: var(--fs-700);
   font-family: var(--ff-bold);
 }
+
+.nav--links {
+  display: flex;
+  gap: 3rem;
+}
+.link {
+  font-weight: var(--Semi-bold);
+}
 .nav--bar svg {
+  display: none;
+  visibility: hidden;
+
   height: 4rem;
   width: 4rem;
   stroke-width: 3;
   stroke: var(--clr-primary);
 }
-/* burger menu ----------------- */
-.nav--links {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-  display: none;
-}
-
 /* ------------------------------------------- 
                   2.2- hero section
 -------------------------------------------  */
@@ -439,6 +439,7 @@ body {
   row-gap: 3.5rem;
 }
 .feature-img {
+  max-width: 51rem;
   /* adding more space after feature img*/
   /* on mobile view */
   margin-bottom: 6rem;
@@ -447,11 +448,12 @@ body {
   justify-self: center;
   align-self: center;
 }
+
 @media (min-width: 50em) {
   .featurs-grid--container {
     grid-template-rows: repeat(3, 1fr);
     grid-template-columns: repeat(2, 1fr);
-    row-gap: 8rem;
+    row-gap: 10rem;
   }
   .feature-img {
     margin-bottom: 0rem;
