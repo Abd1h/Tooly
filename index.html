@@ -15,33 +15,27 @@
 
     <!-- linking css -->
     <link rel="stylesheet" href="style/genarel.css" />
-    <link rel="stylesheet" href="style/templet.css" />
+
     <!-- linking js -->
-    <script defer src="script.js"></script>
+    <script defer src="JavaScript/mobileNavView.js"></script>
   </head>
   <body>
     <!--------------- navigation --------------->
     <nav class="nav--bar">
       <h1 class="logo">Tooly</h1>
       <ul role="list" class="nav--links">
-        <li class="link"><a href="#">Shop</a></li>
-        <li class="link"><a href="#">Why use?</a></li>
-        <li class="link"><a href="#">Contact & Location</a></li>
+        <li><a class="link" href="#gohere">Home</a></li>
+        <li><a class="link" href="#">Shop</a></li>
+        <li><a class="link" href="#">About</a></li>
+        <li><a class="link" href="#">Contact & Location</a></li>
       </ul>
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        fill="none"
-        viewBox="0 0 24 24"
-        stroke-width="1.5"
-        stroke="currentColor"
-        class="w-6 h-6"
-      >
-        <path
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
-        />
-      </svg>
+      <div class="burger-btn">
+        <ul class="lines-conatiner">
+          <li class="line"></li>
+          <li class="line"></li>
+          <li class="line"></li>
+        </ul>
+      </div>
     </nav>
     <!--============ hero SECTION  ============-->
     <header class="hero-section container even-columns">
@@ -220,7 +214,7 @@
     </section>
 
     <!--  ============ features SECTION ============-->
-    <main class="featurs">
+    <main id="gohere" class="featurs">
       <div class="container">
         <p class="section-start--s-title">Why us?</p>
         <h2 class="featurs-title section-head--title">
