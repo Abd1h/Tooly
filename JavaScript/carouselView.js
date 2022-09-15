@@ -14,16 +14,35 @@ const reviewsNumber = reviews.length;
 
 const moveToRight = function () {
   reviews.forEach((review, i) => {
-    console.log(reviews);
     review.style.transform = ` translateX(${(i - currentReview) * 100}%) `;
   });
-  currentReview++;
 };
 moveToRight();
 
+const moveToLeft = function () {
+  reviews.forEach((review, i) => {
+    review.style.transform = ` translateX(${(i - currentReview) * 100}%) `;
+  });
+};
+moveToLeft();
+
 btnRight.addEventListener('click', function () {
-  if (reviewsNumber === currentReview) {
+  // 1)if its the last review than go back to the first
+  if (reviewsNumber - 1 === currentReview) {
     currentReview = 0;
+    moveToRight();
   }
-  moveToRight();
+  // moveing and updating the active dot
+  else {
+    currentReview++;
+    moveToRight();
+  }
+});
+
+btnLeft.addEventListener('click', function () {
+  // 1)if its the last review than go back to the first
+  if (currentReview === 0) return;
+  // moveing and updating the active dot
+  currentReview--;
+  moveToLeft();
 });
