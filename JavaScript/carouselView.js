@@ -1,7 +1,7 @@
 const btnRight = document.querySelector('.reviews-chevron--right');
 const btnLeft = document.querySelector('.reviews-chevron--left');
 const reviews = document.querySelectorAll('.single-review-container');
-const caouselDots = document.querySelectorAll('.dot');
+const carouselDots = document.querySelectorAll('.dot');
 // "dot-active" class
 let currentReview = 0;
 const reviewsNumber = reviews.length;
@@ -20,7 +20,8 @@ const moveToReview = function () {
 moveToReview(); //to set the initial position for all reviews
 
 const UpdateActiveDot = function () {
-  caouselDots.forEach((dot) => {
+  carousel;
+  Dots.forEach((dot) => {
     // 1) remove dot-active class from all dots
     dot.classList.remove('dot-active');
     // 2) adding dot-active to the matching dot
@@ -55,7 +56,7 @@ btnLeft.addEventListener('click', function () {
   UpdateActiveDot();
 });
 
-caouselDots.forEach((dot) => {
+carouselDots.forEach((dot) => {
   dot.addEventListener('click', function () {
     currentReview = dot.dataset.dot - 1;
 
