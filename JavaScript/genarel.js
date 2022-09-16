@@ -55,4 +55,36 @@ const LazyImagesObserver = new IntersectionObserver(
 );
 images.forEach((img) => LazyImagesObserver.observe(img));
 
-// *******aplaying soomth section reveal while scrolling *******
+// ******* featured in seciton scroll animation*******
+const FeaturedInSection = document.querySelector('.featured-in-section');
+// scroll speed = the deffrence between point A and Point B "delta = A - B "
+// A =pageYOffset "your position one the page" , B=last value of A
+let newPos,
+  lastPos = 0,
+  delta,
+  timer,
+  delay = 100;
+const checkScrollSpeed = function () {
+  function clear() {
+    lastPos = null;
+    delta = 0;
+  }
+
+  clear();
+
+  newPos = window.pageYOffset;
+  if (lastPos !== 0) {
+    delta = newPos - lastPos;
+  }
+  lastPos = newPos;
+
+  clearTimeout(timer);
+  timer = setTimeout(clear, delay);
+  const translateValue = Math.round(delta);
+  FeaturedInSection.style.transform = `translateX(${translateValue - 500}%)`;
+  console.log(Math.round(delta));
+};
+
+window.addEventListener('scroll', function () {
+  checkScrollSpeed();
+});

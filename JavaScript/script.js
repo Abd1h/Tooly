@@ -1,44 +1,42 @@
-// // const FeaturedInSection = document.querySelector(".featured-in-section");
+// const FeaturedInSection = document.querySelector(".featured-in-section");
 
-// // document.addEventListener("scroll", function (e) {
-// //   e.preventDefault();
+// document.addEventListener("scroll", function (e) {
+//   e.preventDefault();
 
-// //   FeaturedInSection.style.animationName = "logos-right";
-// //   console.log("fire");
-// // });
-// import
-// var checkScrollSpeed = (function (settings) {
-//   settings = settings || {};
+//   FeaturedInSection.style.animationName = "logos-right";
+//   console.log("fire");
+// });
 
-//   var lastPos,
-//     newPos,
-//     timer,
-//     delta,
-//     delay = settings.delay || 50; // in "ms" (higher means lower fidelity )
+var checkScrollSpeed = (function (settings) {
+  settings = settings || {};
 
-//   function clear() {
-//     lastPos = null;
-//     delta = 0;
-//   }
+  var lastPos,
+    newPos,
+    timer,
+    delta,
+    delay = settings.delay || 50; // in "ms" (higher means lower fidelity )
 
-//   clear();
+  function clear() {
+    lastPos = null;
+    delta = 0;
+  }
 
-//   return function () {
-//     newPos = window.scrollY;
-//     if (lastPos != null) {
-//       // && newPos < maxScroll
-//       delta = newPos - lastPos;
-//     }
-//     lastPos = newPos;
-//     clearTimeout(timer);
-//     timer = setTimeout(clear, delay);
-//     return delta;
-//   };
-// })();
+  clear();
 
-// // listen to "scroll" event
-// window.onscroll = function () {
-//   console.log(checkScrollSpeed());
-// };
+  return function () {
+    newPos = window.scrollY;
+    if (lastPos != null) {
+      // && newPos < maxScroll
+      delta = newPos - lastPos;
+    }
+    lastPos = newPos;
+    clearTimeout(timer);
+    timer = setTimeout(clear, delay);
+    return delta;
+  };
+})();
 
-// console.log("test");
+// listen to "scroll" event
+window.onscroll = function () {
+  console.log(checkScrollSpeed());
+};
