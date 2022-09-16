@@ -965,10 +965,12 @@ textarea {
 .dot {
   cursor: pointer;
   background-color: white;
-  border-radius: 50%;
-  border: 3px solid var(--clr-base);
+  border-radius: 100%;
+  border: 2px solid var(--clr-base);
   height: var(--fs-base);
   width: var(--fs-base);
+  transition: var(--base-transition);
+  flex-shrink: 0;
 }
 .dot-active {
   border: 3px solid var(--clr-primary);
