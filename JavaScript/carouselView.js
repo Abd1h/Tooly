@@ -1,3 +1,4 @@
+// ******* reviews section caousel functionality*******
 const btnRight = document.querySelector('.reviews-chevron--right');
 const btnLeft = document.querySelector('.reviews-chevron--left');
 const reviews = document.querySelectorAll('.single-review-container');

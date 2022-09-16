@@ -1,3 +1,4 @@
+// ******* nav mobile menu functionality*******
 const burgerBtn = document.querySelector('.burger-btn');
 const burgerMenu = document.querySelector('.nav-links-container');
 const btnLines = document.querySelectorAll('.line');

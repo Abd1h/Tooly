@@ -14,6 +14,8 @@
 -----------------------------------
 3- buttons 
 3.1 hero section btn (SHOP NOW)
+-----------------------------------
+4-classes that are manipulated by JS
  ============================================
 ============================================ */
 
@@ -359,28 +361,7 @@ body,
     justify-content: center;
   }
 }
-/* ||JS|| classes below are manipulated by js */
-/* button lines */
-.line-1 {
-  transform: translateY(100%) rotate(-45deg);
-}
-.line-3 {
-  transform: translateY(-100%) rotate(45deg);
-}
-.line-2 {
-  display: none;
-}
-/* nav slide */
-.open {
-  visibility: visible;
-  transform: translateX(0%);
-  opacity: 1;
-  pointer-events: auto;
-  filter: blur(0px);
-}
-.overlay {
-  filter: blur(5px);
-}
+
 /* ------------------------------------------- 
                   2.2- hero section
 -------------------------------------------  */
@@ -1035,4 +1016,46 @@ textarea {
   to {
     transform: translateX(6px);
   }
+}
+
+/* ============================================ 
+     4-classes that are manipulated by JS
+============================================  */
+/* ||JS|| classes for nav mobile */
+/* button lines */
+.line-1 {
+  transform: translateY(100%) rotate(-45deg);
+}
+.line-3 {
+  transform: translateY(-100%) rotate(45deg);
+}
+.line-2 {
+  display: none;
+}
+/* nav slide */
+.open {
+  visibility: visible;
+  transform: translateX(0%);
+  opacity: 1;
+  pointer-events: auto;
+  filter: blur(0px);
+}
+.overlay {
+  filter: blur(5px);
+}
+
+/* ||JS|| class for section smooth reveal */
+
+.hid-section {
+  transform: translateY(50%);
+  filter: blur(5px);
+  opacity: 0;
+}
+.section-smooth-reveal {
+  /* just to select every section with this class from js */
+  transition: all 0.5s;
+}
+
+.lazy-blur {
+  filter: blur(4px);
 }
