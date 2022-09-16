@@ -3,7 +3,7 @@
 
 0- Notes about the project system 
 -----------------------------------
-1- Global Css "root , body ..etc"
+1- Global Css "root , body,.body ..etc"
 -----------------------------------
 2- Sections work
 2.1 nav
@@ -105,15 +105,13 @@ html {
   /* convert to 10px for using rem*/
   /* 10px / 16px = 0.625 = 62.5% */
   font-size: 62.5%;
-  overflow-x: hidden;
 }
 
-body {
+body,
+.body {
   min-height: 100vh;
   text-rendering: optimizeSpeed;
   line-height: 1.5;
-
-  overflow-x: hidden;
 }
 
 /* ============================================ 
@@ -200,7 +198,8 @@ body {
     --sections-padding: 4rem;
   }
 }
-body {
+body,
+.body {
   font-family: var(--ff-base);
   font-size: var(--fs-base);
   color: var(--clr-base);
@@ -209,7 +208,10 @@ body {
   flex-direction: column;
   gap: 10rem;
 }
-
+.overflow {
+  overflow: hidden;
+  position: relative;
+}
 /* centring and padding */
 .container {
   width: min(100% - (var(--sections-padding) * 2), var(--screen-Max-Width));
@@ -283,6 +285,7 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  overflow-x: hidden;
   height: 6vh;
   padding-inline: var(--sections-padding);
   margin-top: 1rem;
@@ -306,6 +309,20 @@ body {
 .link:focus {
   color: var(--clr-primary);
 }
+/* burger btn style */
+.lines-conatiner {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.line {
+  caret-color: transparent;
+  background: var(--clr-primary);
+  width: 2.3em;
+  height: 0.3em;
+  border-radius: var(--border-r);
+  transition: var(--base-transition);
+}
 .burger-btn {
   display: none;
   z-index: 999;
@@ -316,59 +333,53 @@ body {
   .burger-btn {
     display: block;
   }
-  .nav--links {
+  .nav-links-container {
     font-size: var(--fs-600);
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-    width: 80%;
     position: absolute;
     top: 0;
     right: 0;
+    width: 85%;
+    height: 100vh;
     z-index: 9;
     background-color: var(--clr-secondary);
     color: var(--clr-base-lt);
     transition: var(--base-transition);
+
     /* hid */
+    visibility: hidden;
     transform: translateX(100%);
     opacity: 0;
+    pointer-events: none;
     filter: blur(5px);
   }
-
-  .lines-conatiner {
-    display: flex;
+  .nav--links {
+    height: 100%;
     flex-direction: column;
-    gap: 0.5rem;
+    align-items: center;
+    justify-content: center;
   }
-  .line {
-    caret-color: transparent;
-    background: var(--clr-primary);
-    width: 2.3em;
-    height: 0.3em;
-    border-radius: var(--border-r);
-    transition: var(--base-transition);
-  }
-  /* ||JS|| classes below are manipulated by js */
-  /* button lines */
-  .line-1 {
-    transform: translateY(100%) rotate(-45deg);
-  }
-  .line-3 {
-    transform: translateY(-100%) rotate(45deg);
-  }
-  .line-2 {
-    display: none;
-  }
-  /* nav slide */
-  .open {
-    transform: translateX(0%);
-    opacity: 10;
-    filter: blur(0px);
-  }
-  .overlay {
-    filter: blur(5px);
-  }
+}
+/* ||JS|| classes below are manipulated by js */
+/* button lines */
+.line-1 {
+  transform: translateY(100%) rotate(-45deg);
+}
+.line-3 {
+  transform: translateY(-100%) rotate(45deg);
+}
+.line-2 {
+  display: none;
+}
+/* nav slide */
+.open {
+  visibility: visible;
+  transform: translateX(0%);
+  opacity: 1;
+  pointer-events: auto;
+  filter: blur(0px);
+}
+.overlay {
+  filter: blur(5px);
 }
 /* ------------------------------------------- 
                   2.2- hero section
@@ -633,14 +644,14 @@ body {
 @media (min-width: 75em) {
   .packages-container {
     grid-template-columns: 1fr 1fr 1fr;
-    gap: 5rem;
+    gap: 10rem;
   }
   .single-package-container:nth-child(3) {
     grid-column: auto;
   }
 }
 .single-package-container {
-  max-width: min(100%, 22em);
+  width: min(100%, 21em);
   border-radius: var(--border-r);
   box-shadow: var(--shadow-lt);
   overflow: hidden;
@@ -956,7 +967,7 @@ textarea {
 /* ------- reviews dots -------  */
 .reviews-dots {
   display: flex;
-  gap: 1.5rem;
+  gap: 2rem;
   position: absolute;
   right: 50%;
   top: 100%;
@@ -967,8 +978,8 @@ textarea {
   background-color: white;
   border-radius: 100%;
   border: 2px solid var(--clr-base);
-  height: var(--fs-base);
-  width: var(--fs-base);
+  height: calc(var(--fs-base) + 0.1rem);
+  width: calc(var(--fs-base) + 0.1rem);
   transition: var(--base-transition);
   flex-shrink: 0;
 }
