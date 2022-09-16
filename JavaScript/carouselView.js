@@ -20,8 +20,7 @@ const moveToReview = function () {
 moveToReview(); //to set the initial position for all reviews
 
 const UpdateActiveDot = function () {
-  carousel;
-  Dots.forEach((dot) => {
+  carouselDots.forEach((dot) => {
     // 1) remove dot-active class from all dots
     dot.classList.remove('dot-active');
     // 2) adding dot-active to the matching dot
