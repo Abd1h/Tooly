@@ -56,35 +56,64 @@ const LazyImagesObserver = new IntersectionObserver(
 images.forEach((img) => LazyImagesObserver.observe(img));
 
 // ******* featured in seciton scroll animation*******
+
 const FeaturedInSection = document.querySelector('.featured-in-section');
 // scroll speed = the deffrence between point A and Point B "delta = A - B "
 // A =pageYOffset "your position one the page" , B=last value of A
-let newPos,
-  lastPos = 0,
-  delta,
-  timer,
-  delay = 100;
-const checkScrollSpeed = function () {
-  function clear() {
-    lastPos = null;
-    delta = 0;
+
+const obsCallbackTranslateX = function (entries, observer) {
+  const entry = entries[0];
+  const delay = 50;
+  //
+  const translateEl = function () {
+    const translateValue = +window.pageYOffset;
+    console.log(translateValue);
+    entry.target.style.transform = `translateX(${translateValue - 500}%)`;
+  };
+
+  if (entry.isIntersecting) {
+    const handler = setInterval(translateEl, delay);
   }
-
-  clear();
-
-  newPos = window.pageYOffset;
-  if (lastPos !== 0) {
-    delta = newPos - lastPos;
+  if (!entry.isIntersecting) {
+    clearInterval(handler);
   }
-  lastPos = newPos;
-
-  clearTimeout(timer);
-  timer = setTimeout(clear, delay);
-  const translateValue = Math.round(delta);
-  FeaturedInSection.style.transform = `translateX(${translateValue - 500}%)`;
-  console.log(Math.round(delta));
+};
+const obsOptionsTranslateX = {
+  root: null,
+  threshold: 0.15,
 };
 
-window.addEventListener('scroll', function () {
-  checkScrollSpeed();
-});
+const FeaturedInSectionObserver = new IntersectionObserver(
+  obsCallbackTranslateX,
+  obsOptionsTranslateX
+);
+
+FeaturedInSectionObserver.observe(FeaturedInSection);
+
+// ==================================================================//
+// const obsCallbackTranslateX = function (entries, observer) {
+//   const entry = entries[0];
+//   //
+//   const function1 = function () {
+//     const translateValue = +window.pageYOffset;
+//     console.log(translateValue);
+//     entry.target.style.transform = `translateX(${translateValue - 500}%)`;
+//   };
+//   if (entry.isIntersecting) {
+//     document.addEventListener('scroll', function1);
+//   } else if (!entry.isIntersecting) {
+//     document.removeEventListener('scroll', function1);
+//     console.log('not intersecting');
+//   }
+// };
+// const obsOptionsTranslateX = {
+//   root: null,
+//   threshold: 0,
+// };
+
+// const FeaturedInSectionObserver = new IntersectionObserver(
+//   obsCallbackTranslateX,
+//   obsOptionsTranslateX
+// );
+
+// FeaturedInSectionObserver.observe(FeaturedInSection);

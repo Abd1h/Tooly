@@ -401,9 +401,7 @@ body,
   align-items: center;
   gap: 2rem;
 
-  /* animation name depand on the scorll that comes from JavaScript [right,or left]*/
-  animation: 6s linear infinite;
-  /* animation-name: logos-left; */
+  transition: all 100ms linear;
 }
 .about-title {
   margin-bottom: 1rem !important;
