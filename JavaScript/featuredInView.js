@@ -68,7 +68,6 @@ const checkForMoreMarkup = function () {
   if (FeaturedInSectionWidth < CurrentScreenWidth) {
     const markup = generateHTMLMarkup();
     FeaturedInSection.insertAdjacentHTML('beforeend', markup);
-    console.log('moreMarkup was generated');
   }
 };
 

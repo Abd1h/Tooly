@@ -402,7 +402,7 @@ body,
   align-items: center;
   gap: 2rem;
 
-  transition: all 150ms linear;
+  transition: all 100ms linear;
 }
 .about-title {
   margin-bottom: 1rem !important;
@@ -416,7 +416,7 @@ body,
   flex-basis: 0.4rem;
   height: 3rem;
 
-  margin: 0 2.6rem;
+  margin-inline: 2.6rem;
   background-color: var(--clr-base);
 }
 .single-featured {
