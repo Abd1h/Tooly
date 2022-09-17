@@ -70,12 +70,13 @@ const obsCallbackTranslateX = function (entries, observer) {
     console.log(translateValue);
     entry.target.style.transform = `translateX(${translateValue - 500}%)`;
   };
-
+  let handler;
   if (entry.isIntersecting) {
-    const handler = setInterval(translateEl, delay);
+    handler = setInterval(translateEl, delay);
   }
   if (!entry.isIntersecting) {
     clearInterval(handler);
+    console.log('not intersecting');
   }
 };
 const obsOptionsTranslateX = {
