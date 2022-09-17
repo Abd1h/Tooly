@@ -343,7 +343,7 @@ body,
     right: 0;
     width: 85%;
     height: 100vh;
-    z-index: 9;
+    z-index: 99;
     background-color: var(--clr-secondary);
     color: var(--clr-base-lt);
     transition: var(--base-transition);
@@ -389,44 +389,45 @@ body,
   max-width: min(100%, 25em);
 
   /* design inside images */
+  margin-top: -6rem;
   display: grid;
-  grid-template-columns: repeat(11, 1fr);
+  grid-template-columns: repeat(10, 1fr);
   grid-template-rows: repeat(11, 1fr);
 }
-.single-hero-img img {
-  transform: scale(4.1);
-  border-radius: 0.4px;
+.single-hero-img {
+  transform: scale(4);
   filter: brightness(0.8);
- 
+  transition: all 1s;
 }
+.single-hero-img img {
+  display: inline;
+  border-radius: 0.4px;
+}
+
 .single-hero-img:nth-child(1) {
   grid-area: 6/6/7/7;
-  z-index: 7;
+  z-index: 9;
 }
-.single-hero-img:nth-child(2) {
 
-  grid-area: 4/8/5/9;
+.single-hero-img:nth-child(2) {
+  grid-area: 5/8/6/9;
 }
 .single-hero-img:nth-child(3) {
-   black;
-  grid-area: 8/4/9/5;
+  z-index: 3;
+  grid-area: 8/3/9/4;
 }
 .single-hero-img:nth-child(4) {
-  
   grid-area: 7/7/8/8;
 }
 .single-hero-img:nth-child(5) {
-   
-  grid-area: 5/5/6/6;
+  grid-area: 5/4/6/5;
   z-index: 1;
 }
 .single-hero-img:nth-child(6) {
-   
-  grid-area: 2/6/3/7;
+  grid-area: 4/6/5/7;
 }
 .single-hero-img:nth-child(7) {
-   
-  grid-area: 10/6/11/7;
+  grid-area: 9/6/10/7;
 }
 /* ------------------------------------------- 
               2.3- featured In
@@ -1098,7 +1099,13 @@ textarea {
   /* just to select every section with this class from js */
   transition: all 0.5s;
 }
-
+/* for lazy images */
 .lazy-blur {
   filter: blur(4px);
+}
+
+/* hero section images */
+.active-hero-img {
+  z-index: 19 !important;
+  filter: brightness(1);
 }
