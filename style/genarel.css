@@ -201,7 +201,8 @@ body,
   }
 }
 body,
-.body {
+.body,
+.observer {
   font-family: var(--ff-base);
   font-size: var(--fs-base);
   color: var(--clr-base);
@@ -401,7 +402,7 @@ body,
   align-items: center;
   gap: 2rem;
 
-  transition: all 100ms linear;
+  transition: all 150ms linear;
 }
 .about-title {
   margin-bottom: 1rem !important;
@@ -409,6 +410,14 @@ body,
 .single-featured--container {
   flex-shrink: 0;
   flex-basis: 12rem;
+}
+.divider {
+  flex-shrink: 0;
+  flex-basis: 0.4rem;
+  height: 3rem;
+
+  margin: 0 2.6rem;
+  background-color: var(--clr-base);
 }
 .single-featured {
   opacity: 60%;
