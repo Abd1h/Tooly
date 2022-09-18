@@ -1,4 +1,24 @@
-// *******aplaying soomth section reveal while scrolling *******
+// ******* hero Section img random activation *******
+const heroImgs = document.querySelectorAll('.single-hero-img');
+
+const activeImg = function () {
+  // number of images
+  const imgsNumber = heroImgs.length;
+  //to active image rondomly
+  const randomNum = Math.floor(Math.random() * imgsNumber);
+  heroImgs.forEach((img, i) => {
+    if (i !== randomNum) return;
+    console.log(i, randomNum);
+    img.focus();
+
+    // testing
+    // img.style.border = '2px solid red';
+  });
+};
+setInterval(activeImg, 3000);
+
+//
+
 // const heroImgs = document.querySelectorAll('.hero-img');
 
 // const deActiveAllimgs = function () {

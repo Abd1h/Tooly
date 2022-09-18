@@ -395,18 +395,18 @@ body,
   grid-template-columns: repeat(13, 1fr);
   grid-template-rows: repeat(6, 1fr);
 }
+
+.single-hero-img:hover,
+.single-hero-img:focus {
+  animation: hero-animation 1s ease forwards;
+}
+
 .single-hero-img {
   filter: brightness(0.7);
   align-self: center;
 }
-
-.single-hero-img:hover {
-  animation: hero-animation 1s ease forwards;
-}
-
 .single-hero-img:nth-child(1) {
   grid-area: 3/5/6/11;
-
   z-index: 9;
 }
 
@@ -417,10 +417,8 @@ body,
   grid-area: 4/1/7/8;
   z-index: 3;
 }
-
 .single-hero-img:nth-child(4) {
   grid-area: 2/2/5/7;
-
   z-index: 2;
 }
 .single-hero-img:nth-child(5) {
@@ -1122,10 +1120,4 @@ textarea {
 /* for lazy images */
 .lazy-blur {
   filter: blur(4px);
-}
-
-/* hero section images */
-.active-hero-img {
-  z-index: 19 !important;
-  filter: brightness(1);
 }
