@@ -1,20 +1,20 @@
 // *******aplaying soomth section reveal while scrolling *******
-const heroImgs = document.querySelectorAll('.hero-img');
+// const heroImgs = document.querySelectorAll('.hero-img');
 
-const deActiveAllimgs = function () {
-  heroImgs.forEach((img) =>
-    img.closest('.single-hero-img').classList.remove('active-hero-img')
-  );
-};
+// const deActiveAllimgs = function () {
+//   heroImgs.forEach((img) =>
+//     img.closest('.single-hero-img').classList.remove('active-hero-img')
+//   );
+// };
 
-heroImgs.forEach((img) => {
-  img.addEventListener('mouseover', function (e) {
-    deActiveAllimgs();
-    const target = e.target.closest('.single-hero-img');
+// heroImgs.forEach((img) => {
+//   img.addEventListener('mouseover', function (e) {
+//     deActiveAllimgs();
+//     const target = e.target.closest('.single-hero-img');
 
-    target.classList.add('active-hero-img');
-  });
-});
+//     target.classList.add('active-hero-img');
+//   });
+// });
 
 // *******aplaying soomth section reveal while scrolling *******
 const AllSections = document.querySelectorAll('.section-smooth-reveal');

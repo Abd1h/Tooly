@@ -389,45 +389,47 @@ body,
   max-width: min(100%, 25em);
 
   /* design inside images */
-  margin-top: -6rem;
+  margin-top: -8rem;
   display: grid;
-  grid-template-columns: repeat(10, 1fr);
-  grid-template-rows: repeat(11, 1fr);
+
+  grid-template-columns: repeat(13, 1fr);
+  grid-template-rows: repeat(6, 1fr);
 }
 .single-hero-img {
-  transform: scale(4);
-  filter: brightness(0.8);
-  transition: all 1s;
+  filter: brightness(0.7);
+  align-self: center;
 }
-.single-hero-img img {
-  display: inline;
-  border-radius: 0.4px;
+
+.single-hero-img:hover {
+  animation: hero-animation 1s ease forwards;
 }
 
 .single-hero-img:nth-child(1) {
-  grid-area: 6/6/7/7;
+  grid-area: 3/5/6/11;
+
   z-index: 9;
 }
 
 .single-hero-img:nth-child(2) {
-  grid-area: 5/8/6/9;
+  grid-area: 3/10/5/14;
 }
 .single-hero-img:nth-child(3) {
+  grid-area: 4/1/7/8;
   z-index: 3;
-  grid-area: 8/3/9/4;
 }
+
 .single-hero-img:nth-child(4) {
-  grid-area: 7/7/8/8;
+  grid-area: 2/2/5/7;
+
+  z-index: 2;
 }
 .single-hero-img:nth-child(5) {
-  grid-area: 5/4/6/5;
-  z-index: 1;
+  grid-area: 2/6/4/12;
+  align-self: start;
 }
 .single-hero-img:nth-child(6) {
-  grid-area: 4/6/5/7;
-}
-.single-hero-img:nth-child(7) {
-  grid-area: 9/6/10/7;
+  grid-area: 5/7/7/13;
+  align-self: start;
 }
 /* ------------------------------------------- 
               2.3- featured In
@@ -1062,6 +1064,24 @@ textarea {
   }
 }
 
+@keyframes hero-animation {
+  0% {
+    box-shadow: var(--shadow);
+  }
+
+  30% {
+    filter: brightness(1);
+    z-index: 56;
+    box-shadow: var(--shadow);
+    transform: translateY(-1px) scale(1.15);
+  }
+  100% {
+    z-index: 56;
+    filter: brightness(1);
+    box-shadow: var(--shadow);
+    transform: translateY(-1px) scale(1.15);
+  }
+}
 /* ============================================ 
      4-classes that are manipulated by JS
 ============================================  */
