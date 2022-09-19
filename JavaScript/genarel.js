@@ -36,7 +36,6 @@ heroImgsContainer.addEventListener('mouseover', function () {
 });
 heroImgsContainer.addEventListener('mouseout', function () {
   hoverState = false;
-  activeImg();
 });
 //
 
@@ -59,17 +58,24 @@ heroImgsContainer.addEventListener('mouseout', function () {
 
 // *******aplaying soomth section reveal while scrolling *******
 const allSections = document.querySelectorAll('.section-smooth-reveal');
+const allFeatures = document.querySelectorAll('.feature-info');
+
 // "hid-section" class to preper section for reveling
 
 // 1) first hidding the selected sections
 allSections.forEach((section) => section.classList.add('hid-section'));
+allFeatures.forEach((feature) => feature.classList.add('hid-features-info'));
 // 2) reveal sections
 const obsCallbackRevealSection = function (entries, observer) {
   const entry = entries[0];
 
-  //   reveal section when its intersecting
+  //checking if sections is intersecting
   if (!entry.isIntersecting) return;
-
+  //checking if target is from features section "reveal form left side"
+  if (entry.target.classList.contains('feature-info')) {
+    entry.target.classList.remove('hid-features-info');
+  }
+  //reveal section "from bottom"
   entry.target.classList.remove('hid-section');
 
   //  thats it.. finish obsorving
@@ -78,38 +84,12 @@ const obsCallbackRevealSection = function (entries, observer) {
 
 const obsOptions = {
   root: null,
-  threshold: 0.04,
+  threshold: 0.05,
 };
+
 const observer = new IntersectionObserver(obsCallbackRevealSection, obsOptions);
 allSections.forEach((section) => observer.observe(section));
-
-// *******aplaying soomth feature reveal for features section *******
-const allFeatures = document.querySelectorAll('.feature-info');
-
-// 1) first hidding the selected sections
-allFeatures.forEach((feature) => feature.classList.add('hid-features-info'));
-// 2) reveal sections
-const obsCallbackRevealFeature = function (entries, observer) {
-  const entry = entries[0];
-
-  //   reveal section when its intersecting
-  if (!entry.isIntersecting) return;
-  console.log(entry.target);
-  entry.target.classList.remove('hid-features-info');
-
-  //  thats it.. finish obsorving
-  // observer.unobserve(entry.target);
-};
-
-const obsOptionsFeature = {
-  root: null,
-  threshold: 0.15,
-};
-const observerFeature = new IntersectionObserver(
-  obsCallbackRevealFeature,
-  obsOptionsFeature
-);
-allFeatures.forEach((feature) => observerFeature.observe(feature));
+allFeatures.forEach((feature) => observer.observe(feature));
 
 // *******aplaying Lazy loading for featurs section images *******
 const images = document.querySelectorAll('.img-lazy');
@@ -140,3 +120,33 @@ const LazyImagesObserver = new IntersectionObserver(
   obsOptionsLoadImage
 );
 images.forEach((img) => LazyImagesObserver.observe(img));
+
+// *******getting copyrights year for footer *******
+const copyRightsYear = document.querySelector('.copyrights-year');
+const date = new Date();
+const year = String(date.getFullYear());
+
+copyRightsYear.textContent = year;
+
+// *******action for btns *******
+const btns = document.querySelectorAll('.btn');
+const links = document.querySelectorAll('[href="#"]');
+const messageExitBtn = document.querySelector('.message-btn');
+const messageContainer = document.querySelector('.message-container');
+const targetedBtns = [...btns, ...links];
+
+targetedBtns.forEach((btn) =>
+  btn.addEventListener('click', function (e) {
+    e.preventDefault();
+    console.log('click');
+    messageContainer.classList.add('open');
+    setTimeout(() => {
+      if (messageContainer.classList.contains('open'))
+        messageContainer.classList.remove('open');
+    }, 5000);
+  })
+);
+
+messageExitBtn.addEventListener('click', function () {
+  messageContainer.classList.remove('open');
+});

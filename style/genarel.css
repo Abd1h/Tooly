@@ -129,7 +129,7 @@ body,
   /* primary colors */
   --clr-primary: #ee0202;
   --clr-primary-lt: #fcccca;
-  --clr-primary-dk: #9e0303;
+  --clr-primary-dk: #d60202;
 
   /* secondary colors */
   --clr-secondary: #018f8f;
@@ -202,7 +202,7 @@ body,
 }
 body,
 .body,
-.observer {
+.featuredIn-section-observer {
   font-family: var(--ff-base);
   font-size: var(--fs-base);
   color: var(--clr-base);
@@ -266,7 +266,7 @@ body,
   grid-auto-rows: 1fr;
 }
 
-@media (min-width: 50em) {
+@media (min-width: 59em) {
   .even-columns {
     display: grid;
     /* grid-auto-flow: column;
@@ -431,6 +431,25 @@ body,
   grid-area: 5/7/7/13;
   align-self: start;
 }
+
+/* hero title drill images */
+.drill-relative {
+  position: relative;
+}
+.drill-1 {
+  width: 6.5em;
+  position: absolute;
+  top: 0.95em;
+  left: 0em;
+
+  transform: rotate(180deg);
+}
+.drill-2 {
+  width: 4.8em;
+  position: absolute;
+  top: 0.97em;
+  left: -2.09em;
+}
 /* ------------------------------------------- 
               2.3- featured In
 -------------------------------------------  */
@@ -461,25 +480,6 @@ body,
 .single-featured {
   opacity: 60%;
   filter: brightness(0);
-}
-
-/* hero title drill images */
-.drill-relative {
-  position: relative;
-}
-.drill-1 {
-  width: 6.5em;
-  position: absolute;
-  top: 0.95em;
-  left: 0em;
-
-  transform: rotate(180deg);
-}
-.drill-2 {
-  width: 4.8em;
-  position: absolute;
-  top: 0.97em;
-  left: -2.09em;
 }
 
 /* ------------------------------------------- 
@@ -598,9 +598,6 @@ body,
   left: 0;
 }
 
-.single-review-container:nth-child(3) {
-  transform: translateX(200%);
-}
 .single-review-container {
   min-width: 100%;
   background-color: var(--clr-secondary-lt);
@@ -870,7 +867,7 @@ textarea {
   /* to center icons with address */
   display: flex;
   align-items: center;
-  gap: 1rem;
+  gap: 0.6rem;
 }
 .map-pin svg:first-child {
   /* for the location icon 🩸 */
@@ -885,7 +882,7 @@ textarea {
   height: calc(var(--fs-base) + 0.5rem);
   stroke: var(--clr-base-lt);
 }
-
+/* arrow svg */
 .map-pin:hover svg:last-child,
 .map-pin:active svg:last-child {
   stroke: var(--clr-primary);
@@ -919,7 +916,6 @@ textarea {
     /* to set width */
     /* padding one side = 100vw - 1220px / 2  
     OR 1.2rem on ipad screens */
-
     padding-inline: max(calc((100vw - var(--screen-Max-Width)) / 2), 1.2rem);
   }
   .logo-col {
@@ -963,7 +959,11 @@ textarea {
   grid-column: 1 / -1;
   justify-self: center;
 }
-.github-link,
+.github-link {
+  padding-inline: 0.5em 0.1em;
+}
+.github-link:link,
+.github-link:visited,
 .github-link svg {
   display: inline-block;
 }
@@ -974,21 +974,60 @@ textarea {
 
   transition: var(--base-transition);
 }
-.github-link {
-  padding-inline: 0.5em 0.1em;
-}
+
 .github-link:hover > svg,
 .icon-media:hover {
   fill: var(--clr-base-lt) !important;
 }
+/* ------------------------------------------- 
+2.3- popup message
+-------------------------------------------  */
+.message-container {
+  position: fixed;
+  bottom: 4rem;
+  left: 1rem;
+  box-shadow: var(--shadow);
+  background: var(--clr-secondary);
+  color: var(--clr-base-lt);
+  border: var(--border-r);
+  width: min(90%, 40em);
+  height: min(10vh, 8rem);
+  z-index: 9999;
+
+  display: grid;
+  align-items: center;
+  grid-template-columns: 1fr 6fr 1fr;
+  gap: 0.5rem;
+
+  /* hid */
+  visibility: hidden;
+  transform: translateX(100%);
+  opacity: 0;
+  pointer-events: none;
+  filter: blur(5px);
+}
+
+.message-container svg {
+  justify-self: center;
+  width: calc(var(--fs-base) + 2rem);
+  height: calc(var(--fs-base) + 2rem);
+  fill: var(--clr-secondary-lt);
+}
+.message-container p {
+  display: inline;
+  text-transform: capitalize;
+}
+.message-container p:last-child {
+  font-size: var(--fs-300);
+}
+.message-btn {
+  fill: var(--clr-base-lt) !important;
+
+  cursor: pointer;
+}
 /* ============================================ 
                   4-buttons
 ============================================  */
-/* ------------------------------------------- 
-      3.1- hero section btn (SHOP NOW)
--------------------------------------------  */
-.hero-btn {
-}
 
 /* ------------------------------------------- 
       3.2- reviews left and right chevron
@@ -1034,10 +1073,7 @@ textarea {
   transition: var(--base-transition);
   flex-shrink: 0;
 }
-.dot-active {
-  border: 3px solid var(--clr-primary);
-  background-color: var(--clr-primary);
-}
+
 /* ------------------------------------------- 
       3.3- package section btns (buy + more info)
 -------------------------------------------  */
@@ -1047,15 +1083,14 @@ textarea {
 .package-link:link,
 .package-link:visited {
   font-size: var(--fs-btn);
-}
-.package-link {
+
   display: inline-flex;
   align-items: center;
   gap: 0.2em;
 }
 .package-link svg {
-  width: var(--fs-600);
   height: var(--fs-600);
+  width: var(--fs-600);
   fill: var(--clr-base);
   stroke: var(--clr-base);
 }
@@ -1070,14 +1105,16 @@ textarea {
 
 /* ============================================ 
                   2- animations
-                  
 ============================================  */
+/* for all bottons with the class "btn"*/
 .btn:hover,
 .btn:active {
-  background-color: var(--clr-primary-lt);
-  color: var(--clr-primary);
+  background-color: var(--clr-primary-dk);
+  transform: translateY(-1.5px);
+  box-shadow: var(--shadow);
 }
 
+/* links for features and contact sections */
 @keyframes link-arrows-animation {
   form {
     transform: translateX(0px);
@@ -1087,7 +1124,7 @@ textarea {
     transform: translateX(6px);
   }
 }
-
+/* hero section images animation */
 @keyframes hero-animation {
   0% {
     box-shadow: var(--shadow-lt);
@@ -1148,6 +1185,12 @@ textarea {
 .feature-info {
   transition: all 0.5s;
 }
+/* ||JS|| carousel dots for active dot */
+.dot-active {
+  border: 3px solid var(--clr-primary);
+  background-color: var(--clr-primary);
+}
+
 .section-smooth-reveal {
   /* just to select every section with this class from js */
   transition: all 0.5s;

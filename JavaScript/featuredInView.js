@@ -3,7 +3,7 @@
 const FeaturedInSection = document.querySelector('.featured-in-section');
 
 // observe a couple of sections only
-const targetedSections = document.querySelector('.observer');
+const targetedSections = document.querySelector('.featuredIn-section-observer');
 
 let scrollEventSwitch = false;
 const screenWidth = window.screen.width;

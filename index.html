@@ -25,14 +25,14 @@
   <body>
     <div class="overflow body">
       <!--------------- navigation --------------->
-      <nav class="nav--bar">
+      <nav id="home" class="nav--bar">
         <h1 class="logo">Tooly</h1>
         <div class="nav-links-container">
           <ul role="list" class="nav--links">
-            <li><a class="link" href="#gohere">Home</a></li>
-            <li><a class="link" href="#">Shop</a></li>
-            <li><a class="link" href="#">About</a></li>
-            <li><a class="link" href="#">Contact & Location</a></li>
+            <li><a class="link" href="#home">Home</a></li>
+            <li><a class="link" href="#shop">Shop</a></li>
+            <li><a class="link" href="#about">About</a></li>
+            <li><a class="link" href="#contact">Contact & Location</a></li>
           </ul>
         </div>
         <div class="burger-btn">
@@ -44,7 +44,7 @@
         </div>
       </nav>
       <!--============ hero SECTION  ============-->
-      <div class="observer">
+      <div id="1" class="featuredIn-section-observer">
         <header class="hero-section container even-columns">
           <div>
             <!-- notes:for the text "power" & "tools" are both in a spam "relative" >>> img "absolute" -->
@@ -74,7 +74,7 @@
               build your workshop the smart way,<br />
               Lorem ipsum dolor sit, amet contur adipisicing eli
             </p>
-            <a href="#" class="hero-btn btn">Shop now</a>
+            <button class="hero-btn btn">Shop now</button>
           </div>
           <div class="hero-imgs-container">
             <div class="single-hero-img">
@@ -254,7 +254,7 @@
         </section>
 
         <!--  ============ about us SECTION ============-->
-        <section class="about-section container">
+        <section id="about" class="about-section container">
           <p class="section-start--s-title">About Us</p>
           <h2 class="section-head--title about-title">Our Mission</h2>
           <div class="about-grid">
@@ -480,7 +480,7 @@
       </section>
 
       <!--  ============ packages SECTION  ============-->
-      <section class="container">
+      <section id="shop" class="container">
         <p class="section-start--s-title">packages</p>
         <h2 class="section-head--title">
           Our best tools are now grouped ! <br />
@@ -617,7 +617,10 @@
       </section>
 
       <!--  ============ contact SECTION  ============-->
-      <section class="contact-section container section-smooth-reveal">
+      <section
+        id="contact"
+        class="contact-section container section-smooth-reveal"
+      >
         <p class="section-start--s-title">contact</p>
         <div class="even-columns">
           <!-- first grid child -->
@@ -632,7 +635,7 @@
                     <use href="images/icons.svg#icon-map-pin"></use>
                   </svg>
                   <p class="map-pin-address">
-                    Al-Kadhimiya <br />
+                    Tooly <br />
                     Branch
                   </p>
                   <svg>
@@ -648,7 +651,7 @@
                     <use href="images/icons.svg#icon-map-pin"></use>
                   </svg>
                   <p class="map-pin-address">
-                    Al-Kadhimiya <br />
+                    Tooly <br />
                     Branch2
                   </p>
                   <svg>
@@ -772,7 +775,7 @@
         </div>
         <div class="copyrights">
           <p>
-            &copy <span class="copyrights-year">2022</span>
+            &copy <span class="copyrights-year">2090</span>
             <a
               href="https://github.com/Abd1h"
               target="_blank"
@@ -784,6 +787,25 @@
           </p>
         </div>
       </footer>
+    </div>
+    <!--  popup message -->
+    <div class="message-container">
+      <svg>
+        <use href="images/icons.svg#icon-emoji"></use>
+      </svg>
+      <div>
+        <p>you are on the demo verison</p>
+        <br />
+        <p>
+          more info on
+          <a href="https://github.com/Abd1h/Tooly">
+            <strong> Tooly.gitHub</strong></a
+          >
+        </p>
+      </div>
+      <svg class="message-btn">
+        <use href="images/icons.svg#icon-x"></use>
+      </svg>
     </div>
   </body>
 </html>
