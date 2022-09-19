@@ -1,22 +1,43 @@
 // ******* hero Section img random activation *******
 const heroImgs = document.querySelectorAll('.single-hero-img');
+const heroImgsContainer = document.querySelector('.hero-imgs-container');
+const CHANGE_IMG_SEC = 5000;
+// if (true) we went to stop animation and listen to hover from css
+let hoverState = false;
 
 const activeImg = function () {
+  // check if there is a hover
+  if (hoverState) return;
   // number of images
   const imgsNumber = heroImgs.length;
-  //to active image rondomly
+  // to active image rondomly
   const randomNum = Math.floor(Math.random() * imgsNumber);
+
   heroImgs.forEach((img, i) => {
     if (i !== randomNum) return;
-    console.log(i, randomNum);
-    img.focus();
-
-    // testing
-    // img.style.border = '2px solid red';
+    deactivateAllImgs();
+    img.classList.add('active-img');
   });
 };
-setInterval(activeImg, 3000);
 
+const deactivateAllImgs = function () {
+  heroImgs.forEach((img) => {
+    // if (!img.classList.contains('active-img')) return;
+    img.classList.remove('active-img');
+  });
+};
+
+setInterval(activeImg, CHANGE_IMG_SEC);
+activeImg(); //initial start
+
+heroImgsContainer.addEventListener('mouseover', function () {
+  deactivateAllImgs();
+  hoverState = true;
+});
+heroImgsContainer.addEventListener('mouseout', function () {
+  hoverState = false;
+  activeImg();
+});
 //
 
 // const heroImgs = document.querySelectorAll('.hero-img');
@@ -37,18 +58,18 @@ setInterval(activeImg, 3000);
 // });
 
 // *******aplaying soomth section reveal while scrolling *******
-const AllSections = document.querySelectorAll('.section-smooth-reveal');
+const allSections = document.querySelectorAll('.section-smooth-reveal');
 // "hid-section" class to preper section for reveling
 
 // 1) first hidding the selected sections
-AllSections.forEach((section) => section.classList.add('hid-section'));
-
+allSections.forEach((section) => section.classList.add('hid-section'));
 // 2) reveal sections
 const obsCallbackRevealSection = function (entries, observer) {
   const entry = entries[0];
 
   //   reveal section when its intersecting
   if (!entry.isIntersecting) return;
+
   entry.target.classList.remove('hid-section');
 
   //  thats it.. finish obsorving
@@ -57,11 +78,38 @@ const obsCallbackRevealSection = function (entries, observer) {
 
 const obsOptions = {
   root: null,
-  threshold: 0.15,
+  threshold: 0.04,
+};
+const observer = new IntersectionObserver(obsCallbackRevealSection, obsOptions);
+allSections.forEach((section) => observer.observe(section));
+
+// *******aplaying soomth feature reveal for features section *******
+const allFeatures = document.querySelectorAll('.feature-info');
+
+// 1) first hidding the selected sections
+allFeatures.forEach((feature) => feature.classList.add('hid-features-info'));
+// 2) reveal sections
+const obsCallbackRevealFeature = function (entries, observer) {
+  const entry = entries[0];
+
+  //   reveal section when its intersecting
+  if (!entry.isIntersecting) return;
+  console.log(entry.target);
+  entry.target.classList.remove('hid-features-info');
+
+  //  thats it.. finish obsorving
+  // observer.unobserve(entry.target);
 };
 
-const observer = new IntersectionObserver(obsCallbackRevealSection, obsOptions);
-AllSections.forEach((section) => observer.observe(section));
+const obsOptionsFeature = {
+  root: null,
+  threshold: 0.15,
+};
+const observerFeature = new IntersectionObserver(
+  obsCallbackRevealFeature,
+  obsOptionsFeature
+);
+allFeatures.forEach((feature) => observerFeature.observe(feature));
 
 // *******aplaying Lazy loading for featurs section images *******
 const images = document.querySelectorAll('.img-lazy');

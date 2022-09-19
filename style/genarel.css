@@ -397,13 +397,15 @@ body,
 }
 
 .single-hero-img:hover,
-.single-hero-img:focus {
+.single-hero-img:focus,
+.single-hero-img:active {
   animation: hero-animation 1s ease forwards;
 }
 
 .single-hero-img {
   filter: brightness(0.7);
   align-self: center;
+  transition: var(--base-transition);
 }
 .single-hero-img:nth-child(1) {
   grid-area: 3/5/6/11;
@@ -953,8 +955,32 @@ textarea {
 .icon-media {
   width: var(--fs-650) !important;
   height: var(--fs-650) !important;
+  fill: #171515 !important;
+  transition: var(--base-transition);
 }
+/* copyrights */
+.copyrights {
+  grid-column: 1 / -1;
+  justify-self: center;
+}
+.github-link,
+.github-link svg {
+  display: inline-block;
+}
+.github-link svg {
+  fill: #171515;
+  width: var(--fs-base);
+  height: var(--fs-base);
 
+  transition: var(--base-transition);
+}
+.github-link {
+  padding-inline: 0.5em 0.1em;
+}
+.github-link:hover > svg,
+.icon-media:hover {
+  fill: var(--clr-base-lt) !important;
+}
 /* ============================================ 
                   4-buttons
 ============================================  */
@@ -1064,19 +1090,19 @@ textarea {
 
 @keyframes hero-animation {
   0% {
-    box-shadow: var(--shadow);
+    box-shadow: var(--shadow-lt);
   }
 
   30% {
     filter: brightness(1);
     z-index: 56;
-    box-shadow: var(--shadow);
+    box-shadow: var(--shadow-lt);
     transform: translateY(-1px) scale(1.15);
   }
   100% {
     z-index: 56;
     filter: brightness(1);
-    box-shadow: var(--shadow);
+    box-shadow: var(--shadow-lt);
     transform: translateY(-1px) scale(1.15);
   }
 }
@@ -1113,6 +1139,15 @@ textarea {
   filter: blur(5px);
   opacity: 0;
 }
+.hid-features-info {
+  transform: translateX(-50%);
+  filter: blur(5px);
+  opacity: 0;
+}
+
+.feature-info {
+  transition: all 0.5s;
+}
 .section-smooth-reveal {
   /* just to select every section with this class from js */
   transition: all 0.5s;
@@ -1120,4 +1155,9 @@ textarea {
 /* for lazy images */
 .lazy-blur {
   filter: blur(4px);
+}
+
+/* ||JS|| class for hero section images */
+.active-img {
+  animation: hero-animation 1s ease forwards;
 }
