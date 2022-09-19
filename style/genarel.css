@@ -51,9 +51,9 @@ ul {
 }
 
 /* Set core root defaults */
-html:focus-within {
+/* html:focus-within {
   scroll-behavior: smooth;
-}
+} */
 
 /* A elements that don't have a class get default styles
 a:not([class]) {
@@ -298,12 +298,15 @@ body,
   color: var(--clr-primary);
   font-size: var(--fs-700);
   font-family: var(--ff-bold);
+  cursor: pointer;
+  caret-color: transparent;
 }
 .nav--links {
   display: flex;
   gap: 3rem;
 }
 .link {
+  font-size: calc(var(--fs-base) + 0.4rem);
   font-weight: var(--Semi-bold);
   transition: var(--base-transition);
 }
@@ -993,7 +996,7 @@ textarea {
   width: min(90%, 40em);
   height: min(10vh, 8rem);
   z-index: 9999;
-
+  transition: var(--base-transition);
   display: grid;
   align-items: center;
   grid-template-columns: 1fr 6fr 1fr;

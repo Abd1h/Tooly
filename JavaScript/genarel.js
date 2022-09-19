@@ -1,3 +1,19 @@
+// ******* apllying smooth scrolling *******
+const navlinks = document.querySelectorAll('.link');
+const logoLink = document.querySelectorAll('.logo');
+const soomthScrollLinks = [...navlinks, ...logoLink];
+console.log(logoLink, soomthScrollLinks);
+soomthScrollLinks.forEach((link) => {
+  link.addEventListener('click', function (e) {
+    e.preventDefault();
+    // 1)getting the id value for the targeted section
+    const target = e.target.getAttribute('href').slice(1);
+    // 2) selecting targeted seciton
+    const section = document.getElementById(target);
+    //2) apply smooth scolling
+    section.scrollIntoView({ behavior: 'smooth' });
+  });
+});
 // ******* hero Section img random activation *******
 const heroImgs = document.querySelectorAll('.single-hero-img');
 const heroImgsContainer = document.querySelector('.hero-imgs-container');
@@ -92,14 +108,27 @@ allSections.forEach((section) => observer.observe(section));
 allFeatures.forEach((feature) => observer.observe(feature));
 
 // *******aplaying Lazy loading for featurs section images *******
+
+// import pictur from '../images/featurse' cuz parcel has no way of knowing the url for data-src after building;
+import featureImg2 from 'url:../images/featurse/greyson-joralemon-A1g0oeX29ec-unsplash (1).jpg';
+import featureImg3 from 'url:../images/featurse/marissa-daeger-jCctpZe3sZo-unsplash (1).jpg';
+import featureImg1 from 'url:../images/featurse/pexels-yura-forrat-8642037 (2).jpg';
+//
+const highImages = [featureImg1, featureImg2, featureImg3];
 const images = document.querySelectorAll('.img-lazy');
-images.forEach((img) => img.classList.add('lazy-blur'));
+images.forEach((img, i) => {
+  //1)adding blur effect
+  img.classList.add('lazy-blur');
+  //2) setting the data-src with the high images url
+  img.dataset.src = highImages[i];
+});
 
 const obsCallbackLoadImage = function (entries, observer) {
   const entry = entries[0];
 
   if (!entry.isIntersecting) return;
   // 1) replace images
+  console.log('done');
   entry.target.src = entry.target.dataset.src;
   // 2) remove the blur filter after the new image is loaded
   entry.target.addEventListener('load', function () {
