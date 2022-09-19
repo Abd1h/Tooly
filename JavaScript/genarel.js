@@ -110,6 +110,7 @@ allFeatures.forEach((feature) => observer.observe(feature));
 // *******aplaying Lazy loading for featurs section images *******
 
 // import pictur from '../images/featurse' cuz parcel has no way of knowing the url for data-src after building;
+
 import featureImg2 from 'url:../images/featurse/greyson-joralemon-A1g0oeX29ec-unsplash (1).jpg';
 import featureImg3 from 'url:../images/featurse/marissa-daeger-jCctpZe3sZo-unsplash (1).jpg';
 import featureImg1 from 'url:../images/featurse/pexels-yura-forrat-8642037 (2).jpg';
