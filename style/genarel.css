@@ -1,35 +1,38 @@
 /*/* ============================================
-============================================
+   🔺let me help you navigate this fill🔻
 
-0- Notes about the project system 
+   ex)for nav press Ctrl+Shift+F ==> wright 2.1  
+============================================
+0-  project reset
 -----------------------------------
-1- Global Css "root , body,.body ..etc"
+1- Global css classes "root,container , body,.body ..etc"
 -----------------------------------
-2- Sections work
+2- Sections styling
 2.1 nav
-2.2 hero section [header text + map]
+2.2 hero section [header text + pictures grid]
 2.3 featured In section
-2.4 company features "why use?"
-2.5 
+2.4 about us section
+2.5 Features section 01 02 03 "why use?"
+2.6 reviews section
+2.7 packages section
+2.8 contact section
+2.9 footer section 
+2.99 popup error message 
 -----------------------------------
 3- buttons 
-3.1 hero section btn (SHOP NOW)
+3.1 reviews section left and right chevron + dots
+3.2 package section btns (buy + more info)
+3.3 contact section btn  (send-btn)
 -----------------------------------
-4-classes that are manipulated by JS
+4- animations
+4.1 for all bottons with the class "btn"
+4.2 for features and contact links "arrows" 
+4.3 hero section images animation
+-----------------------------------
+5- All the classes that are manipulated by ||JS||
  ============================================
 ============================================ */
-
-/* - Font weights
-Default: 40
-Semi-bold: 600
-heading-Bold: 800
-
-- Line heights
-Default: 1
-Small: 1.05
-Medium: 1.2
-Paragraph default: 1.6 
-*/
+/* 0-  project reset */
 
 /* Box sizing rules */
 *,
@@ -78,7 +81,6 @@ textarea,
 select {
   font: inherit;
 }
-
 a {
   text-decoration: none;
   color: inherit;
@@ -119,7 +121,6 @@ body,
 /* ============================================ 
                   -global css
 ============================================  */
-
 :root {
   /* base colors */
   --clr-base: #555;
@@ -212,6 +213,7 @@ body,
   gap: 10rem;
 }
 .overflow {
+  /* for body div*/
   overflow: hidden;
   position: relative;
 }
@@ -220,7 +222,6 @@ body,
   width: min(100% - (var(--sections-padding) * 2), var(--screen-Max-Width));
   margin-inline: auto;
 }
-
 .section-start--s-title {
   color: var(--clr-base-dk);
   font-size: var(--fs-xs-title);
@@ -237,7 +238,6 @@ body,
   line-height: 1;
   margin-bottom: 12rem;
 }
-
 .btn {
   color: var(--clr-base-lt);
   font-family: var(--ff-bold);
@@ -265,7 +265,6 @@ body,
   /* to make rows have the same hight */
   grid-auto-rows: 1fr;
 }
-
 @media (min-width: 59em) {
   .even-columns {
     display: grid;
@@ -278,7 +277,7 @@ body,
   }
 }
 /* ============================================ 
-                  2- sections work 
+                  2- sections styling
 ============================================  */
 /* ------------------------------------------- 
                   2.1- nav
@@ -346,7 +345,7 @@ body,
     right: 0;
     width: 85%;
     height: 100vh;
-    z-index: 99;
+    z-index: 999;
     background-color: var(--clr-secondary);
     color: var(--clr-base-lt);
     transition: var(--base-transition);
@@ -414,7 +413,6 @@ body,
   grid-area: 3/5/6/11;
   z-index: 9;
 }
-
 .single-hero-img:nth-child(2) {
   grid-area: 3/10/5/14;
 }
@@ -527,9 +525,8 @@ body,
   padding: 1rem;
 }
 /* ------------------------------------------- 
-           2.4- Features 01 02 03
+           2.5- Features 01 02 03
 -------------------------------------------  */
-
 .featurs-title span {
   /*  for number 3 in the section title */
   font-size: var(--fs-800);
@@ -580,7 +577,7 @@ body,
 }
 
 /* ------------------------------------------- 
-           2.4- reviews 
+           2.6- reviews 
 -------------------------------------------  */
 /* s-title and head title style comes from globel secton */
 .reviews {
@@ -648,9 +645,8 @@ body,
 }
 
 /* ------------------------------------------- 
-2.5- packages section
+   2.7- packages section
 -------------------------------------------  */
-
 .packages-container {
   display: grid;
   justify-content: center;
@@ -796,7 +792,7 @@ body,
 }
 
 /* ------------------------------------------- 
-              4- contact
+              2.8 contact section
 -------------------------------------------  */
 .map-container {
   position: relative;
@@ -896,7 +892,7 @@ textarea {
   color: var(--clr-primary-lt);
 }
 /* ------------------------------------------- 
-2.3- footer section
+           2.9 footer section
 -------------------------------------------  */
 .footer-section {
   background-color: var(--clr-base-dk);
@@ -983,7 +979,7 @@ textarea {
   fill: var(--clr-base-lt) !important;
 }
 /* ------------------------------------------- 
-2.3- popup message
+        2.99 popup error message 
 -------------------------------------------  */
 .message-container {
   position: fixed;
@@ -1029,11 +1025,11 @@ textarea {
   cursor: pointer;
 }
 /* ============================================ 
-                  4-buttons
+                  3-buttons
 ============================================  */
 
 /* ------------------------------------------- 
-      3.2- reviews left and right chevron
+      3.1 reviews left and right chevron
 -------------------------------------------  */
 .reviews-btns {
   background: transparent;
@@ -1071,14 +1067,14 @@ textarea {
   background-color: white;
   border-radius: 100%;
   border: 2px solid var(--clr-base);
-  height: calc(var(--fs-base) + 0.1rem);
-  width: calc(var(--fs-base) + 0.1rem);
+  height: calc(var(--fs-base));
+  width: calc(var(--fs-base));
   transition: var(--base-transition);
   flex-shrink: 0;
 }
 
 /* ------------------------------------------- 
-      3.3- package section btns (buy + more info)
+    3.2 package section btns (buy + more info)
 -------------------------------------------  */
 .package-btn {
   margin: 1.9rem;
@@ -1099,7 +1095,7 @@ textarea {
 }
 
 /* ------------------------------------------- 
-      3.3- contact section btn  (send-btn)
+      3.3 contact section btn  (send-btn)
 -------------------------------------------  */
 .send-btn {
   align-self: flex-start;
@@ -1107,9 +1103,9 @@ textarea {
 }
 
 /* ============================================ 
-                  2- animations
+                  4- animations
 ============================================  */
-/* for all bottons with the class "btn"*/
+/*4.1 for all bottons with the class "btn"*/
 .btn:hover,
 .btn:active {
   background-color: var(--clr-primary-dk);
@@ -1117,7 +1113,7 @@ textarea {
   box-shadow: var(--shadow);
 }
 
-/* links for features and contact sections */
+/*4.2 for features and contact links "arrows" */
 @keyframes link-arrows-animation {
   form {
     transform: translateX(0px);
@@ -1127,7 +1123,7 @@ textarea {
     transform: translateX(6px);
   }
 }
-/* hero section images animation */
+/*4.3 hero section images animation */
 @keyframes hero-animation {
   0% {
     box-shadow: var(--shadow-lt);
@@ -1147,7 +1143,7 @@ textarea {
   }
 }
 /* ============================================ 
-     4-classes that are manipulated by JS
+     5- classes that are manipulated by JS
 ============================================  */
 /* ||JS|| classes for nav mobile */
 /* button lines */
@@ -1168,10 +1164,18 @@ textarea {
   pointer-events: auto;
   filter: blur(0px);
 }
-.overlay {
-  filter: blur(5px);
+.overlay-blur {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 99;
+  backdrop-filter: blur(5px);
 }
-
+.hid-blur {
+  display: none;
+}
 /* ||JS|| class for section smooth reveal */
 
 .hid-section {

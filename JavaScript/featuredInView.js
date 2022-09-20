@@ -33,7 +33,6 @@ const obsCallbackTranslateX = function (entries, observe) {
     //2) Stoping the scroll event when sections is not intersecting
     if (scrollEventSwitch === true) {
       document.removeEventListener('scroll', translateEl);
-
       scrollEventSwitch = false;
     }
   };
