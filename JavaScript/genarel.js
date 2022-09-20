@@ -2,7 +2,7 @@
 const navlinks = document.querySelectorAll('.link');
 const logoLink = document.querySelectorAll('.logo');
 const soomthScrollLinks = [...navlinks, ...logoLink];
-console.log(logoLink, soomthScrollLinks);
+
 soomthScrollLinks.forEach((link) => {
   link.addEventListener('click', function (e) {
     e.preventDefault();
@@ -129,7 +129,7 @@ const obsCallbackLoadImage = function (entries, observer) {
 
   if (!entry.isIntersecting) return;
   // 1) replace images
-  console.log('done');
+
   entry.target.src = entry.target.dataset.src;
   // 2) remove the blur filter after the new image is loaded
   entry.target.addEventListener('load', function () {

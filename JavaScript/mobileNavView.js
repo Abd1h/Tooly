@@ -4,6 +4,7 @@ const burgerMenu = document.querySelector('.nav-links-container');
 const btnLines = document.querySelectorAll('.line');
 const navLinks = document.querySelectorAll('.link');
 const overlay = document.querySelector('.overlay-blur');
+
 // "open" class that opens burgerMenu
 // "line-1 ,line-2,line-3" classes that manipulate burgerBtn shape
 
@@ -26,10 +27,15 @@ burgerBtn.addEventListener('click', function () {
 overlay.addEventListener('click', function () {
   toggleBurgerMenu();
 });
-// close menu when user click on a link
+
+// close menu when user click on a link only one mobile
+
 navLinks.forEach((link) =>
   link.addEventListener('click', function () {
-    toggleBurgerMenu();
+    // if its on mobile and window is open
+    if (burgerMenu.classList.contains('open')) {
+      toggleBurgerMenu();
+    }
   })
 );
 
@@ -40,6 +46,7 @@ const obsCallbackNav = function (entries, observer) {
   const entry = entries[0];
   //if its intersecting its fine
   if (entry.isIntersecting) return;
+
   //when user scrool down "not intersecting" close menu
   if (burgerMenu.classList.contains('open')) {
     toggleBurgerMenu();
