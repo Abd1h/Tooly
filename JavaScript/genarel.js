@@ -1,4 +1,4 @@
-// ******* apllying smooth scrolling *******
+// ******* apllying smooth scrolling for links *******
 const navlinks = document.querySelectorAll('.link');
 const logoLink = document.querySelectorAll('.logo');
 const soomthScrollLinks = [...navlinks, ...logoLink];
@@ -14,6 +14,7 @@ soomthScrollLinks.forEach((link) => {
     section.scrollIntoView({ behavior: 'smooth' });
   });
 });
+//===================================================
 // ******* hero Section img random activation *******
 const heroImgs = document.querySelectorAll('.single-hero-img');
 const heroImgsContainer = document.querySelector('.hero-imgs-container');
@@ -72,6 +73,7 @@ heroImgsContainer.addEventListener('mouseout', function () {
 //   });
 // });
 
+//==============================================================
 // *******aplaying soomth section reveal while scrolling *******
 const allSections = document.querySelectorAll('.section-smooth-reveal');
 const allFeatures = document.querySelectorAll('.feature-info');
@@ -107,6 +109,7 @@ const observer = new IntersectionObserver(obsCallbackRevealSection, obsOptions);
 allSections.forEach((section) => observer.observe(section));
 allFeatures.forEach((feature) => observer.observe(feature));
 
+//================================================================
 // *******aplaying Lazy loading for featurs section images *******
 
 // import pictur from '../images/featurse' cuz parcel has no way of knowing the url for data-src after building;
@@ -151,6 +154,7 @@ const LazyImagesObserver = new IntersectionObserver(
 );
 images.forEach((img) => LazyImagesObserver.observe(img));
 
+//===================================================
 // *******getting copyrights year for footer *******
 const copyRightsYear = document.querySelector('.copyrights-year');
 const date = new Date();
