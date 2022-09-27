@@ -3,6 +3,7 @@ const burgerBtn = document.querySelector('.burger-btn');
 const burgerMenu = document.querySelector('.nav-links-container');
 const btnLines = document.querySelectorAll('.line');
 const navLinks = document.querySelectorAll('.link');
+
 const overlay = document.querySelector('.overlay-blur');
 
 // "open" class that opens burgerMenu
@@ -44,7 +45,7 @@ const header = document.querySelector('.hero-section');
 
 const obsCallbackNav = function (entries, observer) {
   const entry = entries[0];
-  //if its intersecting its fine
+  //if its intersecting fine
   if (entry.isIntersecting) return;
 
   //when user scrool down "not intersecting" close menu
